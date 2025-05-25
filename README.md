@@ -14,13 +14,13 @@ The following is the list of items, which are required to be completed.
 1. Submit link to your repository
 2. Download your github repository as a zip file and submit via LearnJCU.
 
-## Team
+## Team 
 
 It is recommended to complete this assignment in a group of 2-4 students.
-1. Student 1
-2. Hein Htet Aung
-3. Name 3
-4. Name 4
+1. Banyar Saw Thit
+2. Bui Tran Doan
+3. Hein Htet Aung
+4. Zwe Nanda
 
 
 # Project planning BEFORE iteration-1, (see chapters 1-3)
