@@ -35,7 +35,7 @@ Checklist/TODOs:
 
 ---
 
-# This project proposes a Scan-to-Order Restaurant Web App allowing customers to browse the menu, place orders, and pay from their phones by scanning a QR code. Before Iteration 1, necessary user stories are developed, with given priorities and projected work in days. QR scanning, category browsing, cart management, order summary, and online payment are among the features. Additional features include kitchen view, admin menu modification, and digital receipts. With an expected total of 15-20 days of work, the team guarantees that there are more user stories than can be finished initially, allowing for appropriate prioritization and sprint planning.
+This project proposes a Scan-to-Order Restaurant Web App allowing customers to browse the menu, place orders, and pay from their phones by scanning a QR code. Before Iteration 1, necessary user stories are developed, with given priorities and projected work in days. QR scanning, category browsing, cart management, order summary, and online payment are among the features. Additional features include kitchen view, admin menu modification, and digital receipts. With an expected total of 15-20 days of work, the team guarantees that there are more user stories than can be finished initially, allowing for appropriate prioritization and sprint planning.
 
 ---
 ## User Stories and Estimates (week 1 estimation)
