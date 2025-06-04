@@ -5,7 +5,7 @@ As a kitchen manager, I want to receive alerts when any ingredient stock drops b
 Priority: High
 
 Estimated Time: 2 days
-
+---
 2. Real-time inventory updates
 
 As a staff member, I want to log ingredient usage after each order so that the system keeps real-time inventory updates.
