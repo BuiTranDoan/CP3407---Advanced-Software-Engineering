@@ -5,6 +5,7 @@ As a kitchen manager, I want to receive alerts when any ingredient stock drops b
 Priority: High
 
 Estimated Time: 2 days
+
 ---
 2. Real-time inventory updates
 
@@ -14,6 +15,8 @@ Priority: Medium
 
 Estimated Time: 2 days
 
+---
+
 3. Submit customer orders
 
 As a waiter, I want to create and submit a customer’s order by selecting items from the digital menu, so the kitchen can receive it instantly.
@@ -21,6 +24,8 @@ As a waiter, I want to create and submit a customer’s order by selecting items
 Priority: High
 
 Estimated Time: 2 days
+
+---
 
 4. Generate itemized bill
 
@@ -30,6 +35,8 @@ Priority: High
 
 Estimated Time: 1 day
 
+---
+
 5. Assign staff shifts
 
 As a manager, I want to assign shifts to staff members and update their working hours so I can organize a balanced weekly schedule.
@@ -38,6 +45,8 @@ Priority: Medium
 
 Estimated Time: 2 days
 
+---
+
 6. Deactivate staff account
 
 As a manager, I want to deactivate former staff accounts so that they can no longer access the system after leaving.
@@ -45,6 +54,8 @@ As a manager, I want to deactivate former staff accounts so that they can no lon
 Priority: Low
 
 Estimated Time: 1 day
+
+---
 
 7. Daily sales report
 
