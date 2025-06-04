@@ -1,7 +1,7 @@
 1. Low-stock inventory alert
 
 As a kitchen manager, I want to receive alerts when any ingredient stock drops below a threshold so that I can restock on time and avoid running out during peak hours.
-Priority: High
+**Priority**: High
 Estimated Time: 2 days
 
 2. Real-time inventory updates
