@@ -17,16 +17,16 @@
 - *Description*: As a manager, I want to store employee information and shifts so that I can manage staffing efficiently.
 ---
 
-[4] **Generate income/outcome reports**
-- Priority High
-- Estimate: 3 days
-- *Description*: As a manager, I want the system to generate daily and monthly reports so that I can monitor the restaurant's financial health.
----
-
-[5] **Add menu items**
+[4] **Add menu items**
 - Priority High
 - Estimate: 2 days
 - *Description*: As a manager or admin, I want to add and update menu items so that the system always shows the correct offerings.
+---
+
+[5] **Generate income/outcome reports**
+- Priority High
+- Estimate: 3 days
+- *Description*: As a manager, I want the system to generate daily and monthly reports so that I can monitor the restaurant's financial health.
 ---
 
 [6] **Dashboard overview**
