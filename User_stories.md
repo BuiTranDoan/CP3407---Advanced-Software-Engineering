@@ -1,6 +1,8 @@
 ### User Stories (Backlog)
 
-- [1] **Store customer orders** | Priority High | Estimate: 3 days
+[1] **Store customer orders**
+- Priority High
+- Estimate: 3 days
 - *Description*: As a restaurant staff, I want the system to store customer orders so that I can track and manage order history.
 
 As a kitchen manager, I want to receive alerts when any ingredient stock drops below a threshold so that I can restock on time and avoid running out during peak hours.
