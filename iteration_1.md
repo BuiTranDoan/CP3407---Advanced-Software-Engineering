@@ -7,9 +7,9 @@
 * Total estimated amount of work ( 4 developer workload) :  9 days
 
 User stories or tasks (see chapter 4):
-1. [Add menu items](./user_stories/user_story_04_add_menu_items.md), priority High, 2 days  
-2. [Store customer orders](./user_stories/user_story_01_store_customer_orders.md), priority High, 3 days  
-3. [Store inventory data](./user_stories/user_story_02_store_inventory_data.md), priority High, 3 days  
+1. [Add menu items (user_story 4)](./user_stories/user_story_04_add_menu_items.md), priority High, 2 days  
+2. [Store customer orders (user_story 1)](./user_stories/user_story_01_store_customer_orders.md), priority High, 3 days  
+3. [Store inventory data (user_story 2)](./user_stories/user_story_02_store_inventory_data.md), priority High, 3 days  
 4. [System Architecture & UI Sketching](./user_stories/task_architecture_prototype_sketch.md), internal task, 1 day
 
 In progress:
