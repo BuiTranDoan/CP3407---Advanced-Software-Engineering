@@ -14,8 +14,8 @@ User stories or tasks (see chapter 4):
 
 In progress:
 * Store inventory data (ZWE NANDA), started 11/06/2025
-* Add menu items (Banyar Saw Thit), completed 10/06/2025
-* Store customer orders (Banyar Saw Thit), completed 11/06/2025  
+* Add menu items (Banyar Saw Thit), started 10/06/2025
+* Store customer orders (Banyar Saw Thit), started 11/06/2025  
     
 Completed:
 * UI sketching for Add Menu Items screen (Hein Htet Aung), started-11/06/2025 completed-15/06/2025
