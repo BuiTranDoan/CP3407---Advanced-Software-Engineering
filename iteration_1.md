@@ -1,6 +1,5 @@
-# Actual iteration-1 board, (week 4) 11/06/20025 ~ 
+# Actual iteration-1 board, 11/06/20025 ~ (end date here...)
 
-## WEEK 4
 ---
 * Assumed Velocity: 3 task per week
 * Number of developers: 4
@@ -18,8 +17,8 @@ In progress:
 * Store customer orders (Banyar Saw Thit), started 11/06/2025  
     
 Completed:
-* UI sketching for Add Menu Items screen (Hein Htet Aung), started-11/06/2025 completed-15/06/2025
-* System Architecture draft (Bui Tran Doan), started-11/06/2025 completed 15/06/2025  
+* UI sketching for Add Menu Items screen (Hein Htet Aung), started-11/06/2025 completed-15/06/2025 (week 4)
+* System Architecture draft (Bui Tran Doan), started-11/06/2025 completed 15/06/2025 (week 4)
 
 ### Burn Down for iteration-1 (see chapter 4):
 Update this at least once per week
