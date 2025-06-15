@@ -1,0 +1,21 @@
+Index: .idea/CP3407---Advanced-Software-Engineering.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"PYTHON_MODULE\" version=\"4\">\n  <component name=\"NewModuleRootManager\">\n    <content url=\"file://$MODULE_DIR$\" />\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.11 virtualenv at ~/SoftwareDevelopment/GitHub/CP3407---Advanced-Software-Engineering/.venv\" jdkType=\"Python SDK\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n  </component>\n</module>
+===================================================================
+diff --git a/.idea/CP3407---Advanced-Software-Engineering.iml b/.idea/CP3407---Advanced-Software-Engineering.iml
+--- a/.idea/CP3407---Advanced-Software-Engineering.iml	(revision 097fc6dc67f45fa2679122b2f3cc41609de5b4ed)
++++ b/.idea/CP3407---Advanced-Software-Engineering.iml	(date 1748422545696)
+@@ -5,4 +5,11 @@
+     <orderEntry type="jdk" jdkName="Python 3.11 virtualenv at ~/SoftwareDevelopment/GitHub/CP3407---Advanced-Software-Engineering/.venv" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
++  <component name="PyDocumentationSettings">
++    <option name="format" value="PLAIN" />
++    <option name="myDocStringFormat" value="Plain" />
++  </component>
++  <component name="TemplatesService">
++    <option name="TEMPLATE_CONFIGURATION" value="Django" />
++  </component>
+ </module>
+\ No newline at end of file
