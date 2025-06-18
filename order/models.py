@@ -46,8 +46,9 @@ class OrderItem(models.Model):
 
     def get_price(self):
         base_price = self.menu_item.price
-        for customization in self.customizations.all():
-            base_price = base_price + customization.price
+        if self.pk: #really important cuz as a new instance will pass this instead of going through not existing(uncreated custom)
+            for customization in self.customizations.all():
+                base_price = base_price + customization.price
         return base_price
 
     def get_total_price(self):
