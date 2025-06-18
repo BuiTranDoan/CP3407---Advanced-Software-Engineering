@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="807430d5-9ced-446a-b356-6bf7164f21ca" name="Changes" comment="Iteration 1: MenuItemsCRUD">
+      <change afterPath="$PROJECT_DIR$/order/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RMS/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/RMS/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/RMS/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,8 +115,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.CP3407---Advanced-Software-Engineering" />
       <item itemvalue="Python.manage" />
+      <item itemvalue="Django Server.CP3407---Advanced-Software-Engineering" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -142,7 +148,8 @@
       <workItem from="1749620497346" duration="12164000" />
       <workItem from="1749784220171" duration="51000" />
       <workItem from="1749814394802" duration="19000000" />
-      <workItem from="1750003448509" duration="2559000" />
+      <workItem from="1750003448509" duration="8080000" />
+      <workItem from="1750064330283" duration="25447000" />
     </task>
     <task id="LOCAL-00001" summary="Iteration 1: MenuItemsCRUD">
       <option name="closed" value="true" />
@@ -152,7 +159,23 @@
       <option name="project" value="LOCAL" />
       <updated>1750004938436</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Iteration 1: MenuItemsCRUD">
+      <option name="closed" value="true" />
+      <created>1750006205757</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1750006205757</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Iteration 1: MenuItemsCRUD">
+      <option name="closed" value="true" />
+      <created>1750006214945</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1750006214945</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
