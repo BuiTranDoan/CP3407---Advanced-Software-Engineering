@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'menu',
     'rest_framework',
     'rest_framework.authtoken',
-    'order'
+    'order',
+    'inventory',
 ]
 
 MIDDLEWARE = [
@@ -111,8 +112,13 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',  # Require login by default
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',  # Require login by default
     ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+    ],
+    'PAGE_SIZE': 10,
 }
 
 # Internationalization
