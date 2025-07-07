@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System - Inventory</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .inventory-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .inventory-section {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .inventory-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid #ecf0f1;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .inventory-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .inventory-item.low-stock {
+            border-color: #e74c3c;
+            background-color: #fdf2f2;
+        }
+
+        .inventory-item.out-of-stock {
+            border-color: #c0392b;
+            background-color: #f8d7da;
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+        }
+
+        .item-category {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .item-supplier {
+            color: #95a5a6;
+            font-size: 0.8rem;
+        }
+
+        .item-quantity {
+            text-align: center;
+            margin: 0 1rem;
+        }
+
+        .quantity-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .quantity-unit {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .item-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .stock-status {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .status-good {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-low {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .status-out {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .search-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-label {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .filter-select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number.good {
+            color: #27ae60;
+        }
+
+        .stat-number.warning {
+            color: #f39c12;
+        }
+
+        .stat-number.danger {
+            color: #e74c3c;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+        }
+
+        .update-form {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            align-items: end;
+        }
+
+        @media (max-width: 768px) {
+            .inventory-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-filters {
+                flex-direction: column;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">RMS Dashboard</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="tables.html">Tables</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="inventory.html" class="active">Inventory</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Inventory Management</h1>
+            <p class="page-subtitle">Monitor and manage restaurant inventory levels</p>
+        </div>
+
+        <!-- Inventory Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number good" id="totalItems">0</div>
+                <div class="stat-label">Total Items</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number warning" id="lowStockItems">0</div>
+                <div class="stat-label">Low Stock Items</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number danger" id="outOfStockItems">0</div>
+                <div class="stat-label">Out of Stock</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number good" id="wellStockedItems">0</div>
+                <div class="stat-label">Well Stocked</div>
+            </div>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="search-filters">
+            <div class="filter-group">
+                <label class="filter-label">Search Items:</label>
+                <input type="text" id="searchInput" class="form-control" placeholder="Search by name or supplier..." style="width: 300px;">
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Category:</label>
+                <select id="categoryFilter" class="filter-select">
+                    <option value="all">All Categories</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label class="filter-label">Stock Status:</label>
+                <select id="statusFilter" class="filter-select">
+                    <option value="all">All Items</option>
+                    <option value="good">Well Stocked</option>
+                    <option value="low">Low Stock</option>
+                    <option value="out">Out of Stock</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Inventory Grid -->
+        <div class="inventory-grid">
+            <!-- Current Inventory -->
+            <div class="inventory-section">
+                <div class="card-header">
+                    <h3 class="card-title">Current Inventory</h3>
+                </div>
+                <div id="inventoryList">
+                    <div class="loading">Loading inventory items...</div>
+                </div>
+            </div>
+
+            <!-- Low Stock Alerts -->
+            <div class="inventory-section">
+                <div class="card-header">
+                    <h3 class="card-title">Low Stock Alerts</h3>
+                </div>
+                <div id="lowStockList">
+                    <div class="loading">Loading low stock items...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update Stock Modal -->
+        <div id="updateStockModal" class="hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border-radius: 8px; padding: 2rem; max-width: 500px; width: 90%;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 id="modalTitle">Update Stock</h3>
+                    <button type="button" onclick="inventoryManager.closeModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+                </div>
+                <div id="modalContent">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script>
+        class InventoryManager {
+            constructor() {
+                this.inventoryItems = [];
+                this.categories = [];
+                this.filteredItems = [];
+                this.selectedCategory = 'all';
+                this.selectedStatus = 'all';
+                this.searchTerm = '';
+                this.init();
+            }
+
+            async init() {
+                await this.loadData();
+                this.setupEventListeners();
+                this.renderCategories();
+                this.filterItems();
+                this.updateStatistics();
+                
+                // Auto-refresh every 60 seconds
+                setInterval(() => {
+                    this.loadData().then(() => {
+                        this.filterItems();
+                        this.updateStatistics();
+                    });
+                }, 60000);
+            }
+
+            async loadData() {
+                try {
+                    const [itemsResponse, categoriesResponse] = await Promise.all([
+                        api.getInventoryItems(),
+                        api.getInventoryCategories()
+                    ]);
+
+                    this.inventoryItems = itemsResponse.results || [];
+                    this.categories = categoriesResponse.results || [];
+
+                } catch (error) {
+                    console.error('Error loading inventory data:', error);
+                    showAlert('Error loading inventory data. Please check your connection.', 'error');
+                }
+            }
+
+            setupEventListeners() {
+                const searchInput = document.getElementById('searchInput');
+                const categoryFilter = document.getElementById('categoryFilter');
+                const statusFilter = document.getElementById('statusFilter');
+
+                searchInput.addEventListener('input', (e) => {
+                    this.searchTerm = e.target.value.toLowerCase();
+                    this.filterItems();
+                });
+
+                categoryFilter.addEventListener('change', (e) => {
+                    this.selectedCategory = e.target.value;
+                    this.filterItems();
+                });
+
+                statusFilter.addEventListener('change', (e) => {
+                    this.selectedStatus = e.target.value;
+                    this.filterItems();
+                });
+            }
+
+            renderCategories() {
+                const categoryFilter = document.getElementById('categoryFilter');
+                
+                const categoryOptions = this.categories.map(category => 
+                    `<option value="${category.id}">${category.name}</option>`
+                ).join('');
+
+                categoryFilter.innerHTML = `
+                    <option value="all">All Categories</option>
+                    ${categoryOptions}
+                `;
+            }
+
+            filterItems() {
+                this.filteredItems = this.inventoryItems.filter(item => {
+                    const matchesCategory = this.selectedCategory === 'all' || item.category == this.selectedCategory;
+                    const matchesSearch = item.name.toLowerCase().includes(this.searchTerm) ||
+                                        (item.supplier && item.supplier.toLowerCase().includes(this.searchTerm));
+                    
+                    let matchesStatus = true;
+                    if (this.selectedStatus !== 'all') {
+                        const stockStatus = this.getStockStatus(item);
+                        matchesStatus = stockStatus === this.selectedStatus;
+                    }
+                    
+                    return matchesCategory && matchesSearch && matchesStatus;
+                });
+
+                this.renderInventoryItems();
+                this.renderLowStockItems();
+            }
+
+            getStockStatus(item) {
+                if (item.quantity <= 0) return 'out';
+                if (item.quantity < item.threshold) return 'low';
+                return 'good';
+            }
+
+            renderInventoryItems() {
+                const inventoryList = document.getElementById('inventoryList');
+
+                if (this.filteredItems.length === 0) {
+                    inventoryList.innerHTML = '<p class="text-center">No inventory items found.</p>';
+                    return;
+                }
+
+                const html = this.filteredItems.map(item => {
+                    const category = this.categories.find(cat => cat.id === item.category);
+                    const stockStatus = this.getStockStatus(item);
+                    const statusClass = stockStatus === 'out' ? 'out-of-stock' : 
+                                      stockStatus === 'low' ? 'low-stock' : '';
+
+                    return `
+                        <div class="inventory-item ${statusClass}">
+                            <div class="item-info">
+                                <div class="item-name">${item.name}</div>
+                                <div class="item-category">${category ? category.name : 'Unknown Category'}</div>
+                                ${item.supplier ? `<div class="item-supplier">Supplier: ${item.supplier}</div>` : ''}
+                            </div>
+                            
+                            <div class="item-quantity">
+                                <div class="quantity-number">${item.quantity}</div>
+                                <div class="quantity-unit">${item.unit}</div>
+                                <div style="font-size: 0.8rem; color: #7f8c8d;">
+                                    Threshold: ${item.threshold}
+                                </div>
+                            </div>
+                            
+                            <div class="item-actions">
+                                <div class="stock-status status-${stockStatus}">
+                                    ${stockStatus === 'good' ? 'Well Stocked' : 
+                                      stockStatus === 'low' ? 'Low Stock' : 'Out of Stock'}
+                                </div>
+                                <button class="btn btn-primary" style="font-size: 0.8rem; padding: 0.25rem 0.5rem;" 
+                                        onclick="inventoryManager.showUpdateModal(${item.id})">
+                                    Update Stock
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                inventoryList.innerHTML = html;
+            }
+
+            renderLowStockItems() {
+                const lowStockList = document.getElementById('lowStockList');
+                const lowStockItems = this.inventoryItems.filter(item => 
+                    item.quantity < item.threshold && item.quantity > 0
+                );
+
+                if (lowStockItems.length === 0) {
+                    lowStockList.innerHTML = '<p class="text-center">No low stock items!</p>';
+                    return;
+                }
+
+                const html = lowStockItems.map(item => {
+                    const category = this.categories.find(cat => cat.id === item.category);
+                    const percentageLeft = ((item.quantity / item.threshold) * 100).toFixed(1);
+
+                    return `
+                        <div class="inventory-item low-stock">
+                            <div class="item-info">
+                                <div class="item-name">${item.name}</div>
+                                <div class="item-category">${category ? category.name : 'Unknown Category'}</div>
+                                <div style="color: #e74c3c; font-size: 0.9rem; font-weight: 500;">
+                                    ${percentageLeft}% of threshold remaining
+                                </div>
+                            </div>
+                            
+                            <div class="item-quantity">
+                                <div class="quantity-number" style="color: #e74c3c;">${item.quantity}</div>
+                                <div class="quantity-unit">${item.unit}</div>
+                            </div>
+                            
+                            <div class="item-actions">
+                                <button class="btn btn-warning" style="font-size: 0.8rem; padding: 0.25rem 0.5rem;" 
+                                        onclick="inventoryManager.showUpdateModal(${item.id})">
+                                    Restock
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                lowStockList.innerHTML = html;
+            }
+
+            updateStatistics() {
+                const totalItems = this.inventoryItems.length;
+                const lowStockItems = this.inventoryItems.filter(item => 
+                    item.quantity < item.threshold && item.quantity > 0
+                ).length;
+                const outOfStockItems = this.inventoryItems.filter(item => 
+                    item.quantity <= 0
+                ).length;
+                const wellStockedItems = totalItems - lowStockItems - outOfStockItems;
+
+                document.getElementById('totalItems').textContent = totalItems;
+                document.getElementById('lowStockItems').textContent = lowStockItems;
+                document.getElementById('outOfStockItems').textContent = outOfStockItems;
+                document.getElementById('wellStockedItems').textContent = wellStockedItems;
+            }
+
+            showUpdateModal(itemId) {
+                const item = this.inventoryItems.find(i => i.id === itemId);
+                if (!item) return;
+
+                const category = this.categories.find(cat => cat.id === item.category);
+                const modalTitle = document.getElementById('modalTitle');
+                const modalContent = document.getElementById('modalContent');
+
+                modalTitle.textContent = `Update Stock - ${item.name}`;
+
+                modalContent.innerHTML = `
+                    <div class="form-group">
+                        <label class="form-label">Item Name:</label>
+                        <div class="form-control" style="background: #f8f9fa;">${item.name}</div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="form-label">Current Stock:</label>
+                                <div class="form-control" style="background: #f8f9fa;">${item.quantity} ${item.unit}</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="form-label">Threshold:</label>
+                                <div class="form-control" style="background: #f8f9fa;">${item.threshold} ${item.unit}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Category:</label>
+                        <div class="form-control" style="background: #f8f9fa;">${category ? category.name : 'Unknown'}</div>
+                    </div>
+                    
+                    <div class="update-form">
+                        <h4>Update Stock</h4>
+                        <div class="form-row">
+                            <div class="form-group" style="flex: 1;">
+                                <label class="form-label">New Quantity:</label>
+                                <input type="number" id="newQuantity" class="form-control" 
+                                       value="${item.quantity}" min="0" step="0.01">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label class="form-label">Add/Remove:</label>
+                                <input type="number" id="quantityChange" class="form-control" 
+                                       placeholder="±0.00" step="0.01">
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-success" onclick="inventoryManager.updateStock(${item.id})">
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+                        <small style="color: #7f8c8d;">
+                            Enter either a new total quantity or an amount to add/remove (use negative numbers to remove)
+                        </small>
+                    </div>
+                `;
+
+                // Add event listeners for quantity inputs
+                setTimeout(() => {
+                    const newQuantityInput = document.getElementById('newQuantity');
+                    const quantityChangeInput = document.getElementById('quantityChange');
+
+                    newQuantityInput.addEventListener('input', () => {
+                        quantityChangeInput.value = '';
+                    });
+
+                    quantityChangeInput.addEventListener('input', () => {
+                        if (quantityChangeInput.value) {
+                            const change = parseFloat(quantityChangeInput.value) || 0;
+                            newQuantityInput.value = (parseFloat(item.quantity) + change).toFixed(2);
+                        }
+                    });
+                }, 100);
+
+                document.getElementById('updateStockModal').classList.remove('hidden');
+            }
+
+            async updateStock(itemId) {
+                const newQuantity = document.getElementById('newQuantity').value;
+                
+                if (!newQuantity || parseFloat(newQuantity) < 0) {
+                    showAlert('Please enter a valid quantity', 'warning');
+                    return;
+                }
+
+                try {
+                    await api.updateInventoryItem(itemId, {
+                        quantity: parseFloat(newQuantity)
+                    });
+
+                    showAlert('Stock updated successfully!', 'success');
+                    
+                    // Update local data
+                    const item = this.inventoryItems.find(i => i.id === itemId);
+                    if (item) {
+                        item.quantity = parseFloat(newQuantity);
+                        item.last_updated = new Date().toISOString();
+                    }
+                    
+                    this.filterItems();
+                    this.updateStatistics();
+                    this.closeModal();
+                    
+                } catch (error) {
+                    console.error('Error updating stock:', error);
+                    showAlert('Error updating stock. Please try again.', 'error');
+                }
+            }
+
+            closeModal() {
+                document.getElementById('updateStockModal').classList.add('hidden');
+            }
+        }
+
+        // Initialize inventory manager when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            window.inventoryManager = new InventoryManager();
+        });
+    </script>
+</body>
+</html>

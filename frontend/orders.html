@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System - Orders</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .orders-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .order-column {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-height: 500px;
+        }
+
+        .column-header {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .received-header {
+            background: #3498db;
+        }
+
+        .preparing-header {
+            background: #f39c12;
+        }
+
+        .completed-header {
+            background: #27ae60;
+        }
+
+        .order-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #ddd;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .order-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .order-card.received {
+            border-left-color: #3498db;
+        }
+
+        .order-card.preparing {
+            border-left-color: #f39c12;
+        }
+
+        .order-card.completed {
+            border-left-color: #27ae60;
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .order-id {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .order-time {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .order-table {
+            color: #2c3e50;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .order-items {
+            margin-bottom: 1rem;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem 0;
+            font-size: 0.9rem;
+        }
+
+        .order-total {
+            font-weight: bold;
+            text-align: right;
+            padding-top: 0.5rem;
+            border-top: 1px solid #ddd;
+        }
+
+        .order-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .status-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #3498db;
+            background: white;
+            color: #3498db;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #3498db;
+            color: white;
+        }
+
+        .order-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            margin-top: 0.5rem;
+        }
+
+        .empty-column {
+            text-align: center;
+            color: #7f8c8d;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .orders-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">RMS Dashboard</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="tables.html">Tables</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="orders.html" class="active">Orders</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Order Management</h1>
+            <p class="page-subtitle">Track and manage all restaurant orders</p>
+        </div>
+
+        <!-- Order Statistics -->
+        <div class="order-stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalOrdersToday">0</div>
+                <div class="stat-label">Orders Today</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="activeOrders">0</div>
+                <div class="stat-label">Active Orders</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="avgOrderTime">0</div>
+                <div class="stat-label">Avg. Prep Time (min)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="todayRevenue">$0</div>
+                <div class="stat-label">Today's Revenue</div>
+            </div>
+        </div>
+
+        <!-- Status Filters -->
+        <div class="status-filters">
+            <button class="filter-btn active" data-status="all">All Orders</button>
+            <button class="filter-btn" data-status="R">Received</button>
+            <button class="filter-btn" data-status="P">Preparing</button>
+            <button class="filter-btn" data-status="C">Completed</button>
+        </div>
+
+        <!-- Orders Kanban Board -->
+        <div class="orders-container">
+            <!-- Received Orders -->
+            <div class="order-column">
+                <div class="column-header received-header">
+                    Received Orders
+                    <span id="receivedCount" class="badge" style="background: rgba(255,255,255,0.3); margin-left: 0.5rem;">0</span>
+                </div>
+                <div id="receivedOrders" class="orders-list">
+                    <div class="loading">Loading orders...</div>
+                </div>
+            </div>
+
+            <!-- Preparing Orders -->
+            <div class="order-column">
+                <div class="column-header preparing-header">
+                    Preparing Orders
+                    <span id="preparingCount" class="badge" style="background: rgba(255,255,255,0.3); margin-left: 0.5rem;">0</span>
+                </div>
+                <div id="preparingOrders" class="orders-list">
+                    <div class="loading">Loading orders...</div>
+                </div>
+            </div>
+
+            <!-- Completed Orders -->
+            <div class="order-column">
+                <div class="column-header completed-header">
+                    Completed Orders
+                    <span id="completedCount" class="badge" style="background: rgba(255,255,255,0.3); margin-left: 0.5rem;">0</span>
+                </div>
+                <div id="completedOrders" class="orders-list">
+                    <div class="loading">Loading orders...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Details Modal -->
+        <div id="orderModal" class="hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border-radius: 8px; padding: 2rem; max-width: 600px; width: 90%; max-height: 80%; overflow-y: auto;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 id="modalOrderTitle">Order Details</h3>
+                    <button type="button" onclick="orderManager.closeModal()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+                </div>
+                <div id="modalOrderContent">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script>
+        class OrderManager {
+            constructor() {
+                this.orders = [];
+                this.menuItems = [];
+                this.selectedStatus = 'all';
+                this.init();
+            }
+
+            async init() {
+                await this.loadData();
+                this.setupEventListeners();
+                this.renderOrders();
+                this.updateStatistics();
+                
+                // Auto-refresh every 30 seconds
+                setInterval(() => {
+                    this.loadData().then(() => {
+                        this.renderOrders();
+                        this.updateStatistics();
+                    });
+                }, 30000);
+            }
+
+            async loadData() {
+                try {
+                    const [ordersResponse, menuResponse] = await Promise.all([
+                        api.getOrders(),
+                        api.getMenuItems()
+                    ]);
+
+                    this.orders = ordersResponse.results || [];
+                    this.menuItems = menuResponse.results || [];
+
+                } catch (error) {
+                    console.error('Error loading orders data:', error);
+                    showAlert('Error loading orders data. Please check your connection.', 'error');
+                }
+            }
+
+            setupEventListeners() {
+                // Status filter buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.selectedStatus = e.target.dataset.status;
+                        this.renderOrders();
+                    });
+                });
+            }
+
+            renderOrders() {
+                const receivedContainer = document.getElementById('receivedOrders');
+                const preparingContainer = document.getElementById('preparingOrders');
+                const completedContainer = document.getElementById('completedOrders');
+
+                // Filter orders based on selected status
+                let filteredOrders = this.orders;
+                if (this.selectedStatus !== 'all') {
+                    filteredOrders = this.orders.filter(order => order.status === this.selectedStatus);
+                }
+
+                // Separate orders by status
+                const receivedOrders = filteredOrders.filter(order => order.status === 'R');
+                const preparingOrders = filteredOrders.filter(order => order.status === 'P');
+                const completedOrders = filteredOrders.filter(order => order.status === 'C');
+
+                // Update counts
+                document.getElementById('receivedCount').textContent = receivedOrders.length;
+                document.getElementById('preparingCount').textContent = preparingOrders.length;
+                document.getElementById('completedCount').textContent = completedOrders.length;
+
+                // Render each column
+                this.renderOrderColumn(receivedContainer, receivedOrders, 'received');
+                this.renderOrderColumn(preparingContainer, preparingOrders, 'preparing');
+                this.renderOrderColumn(completedContainer, completedOrders, 'completed');
+            }
+
+            renderOrderColumn(container, orders, statusClass) {
+                if (orders.length === 0) {
+                    container.innerHTML = '<div class="empty-column">No orders</div>';
+                    return;
+                }
+
+                const html = orders.map(order => {
+                    const orderTime = new Date(order.created_at);
+                    const timeAgo = this.getTimeAgo(orderTime);
+                    
+                    return `
+                        <div class="order-card ${statusClass}" onclick="orderManager.viewOrderDetails(${order.id})">
+                            <div class="order-header">
+                                <div class="order-id">Order #${order.id}</div>
+                                <div class="order-time">${timeAgo}</div>
+                            </div>
+                            
+                            ${order.table_number ? `<div class="order-table">Table ${order.table_number}</div>` : ''}
+                            
+                            <div class="order-items">
+                                ${this.renderOrderItems(order)}
+                            </div>
+                            
+                            ${order.notes ? `<div style="font-style: italic; color: #7f8c8d; margin-bottom: 0.5rem;">Note: ${order.notes}</div>` : ''}
+                            
+                            <div class="order-total">
+                                Total: ${this.calculateOrderTotal(order)}
+                            </div>
+                            
+                            <div class="order-actions">
+                                ${this.getOrderActions(order)}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                container.innerHTML = html;
+            }
+
+            renderOrderItems(order) {
+                if (!order.items || order.items.length === 0) {
+                    return '<div class="order-item">No items</div>';
+                }
+
+                return order.items.slice(0, 3).map(item => {
+                    const menuItem = this.menuItems.find(mi => mi.id === item.menu_item);
+                    const itemName = menuItem ? menuItem.name : `Item #${item.menu_item}`;
+                    
+                    return `
+                        <div class="order-item">
+                            <span>${item.quantity}x ${itemName}</span>
+                            <span>${formatCurrency(item.line_total || 0)}</span>
+                        </div>
+                    `;
+                }).join('') + (order.items.length > 3 ? `<div class="order-item"><em>+${order.items.length - 3} more items</em></div>` : '');
+            }
+
+            calculateOrderTotal(order) {
+                if (!order.items || order.items.length === 0) {
+                    return formatCurrency(0);
+                }
+                
+                const total = order.items.reduce((sum, item) => sum + parseFloat(item.line_total || 0), 0);
+                return formatCurrency(total);
+            }
+
+            getOrderActions(order) {
+                switch (order.status) {
+                    case 'R':
+                        return `
+                            <button class="btn btn-warning" onclick="event.stopPropagation(); orderManager.updateOrderStatus(${order.id}, 'P')" style="font-size: 0.8rem; padding: 0.25rem 0.5rem;">
+                                Start Preparing
+                            </button>
+                        `;
+                    case 'P':
+                        return `
+                            <button class="btn btn-success" onclick="event.stopPropagation(); orderManager.updateOrderStatus(${order.id}, 'C')" style="font-size: 0.8rem; padding: 0.25rem 0.5rem;">
+                                Mark Complete
+                            </button>
+                        `;
+                    case 'C':
+                        return `
+                            <span class="badge badge-success" style="font-size: 0.8rem;">Completed</span>
+                        `;
+                    default:
+                        return '';
+                }
+            }
+
+            async updateOrderStatus(orderId, newStatus) {
+                try {
+                    await api.updateOrderStatus(orderId, newStatus);
+                    showAlert('Order status updated successfully!', 'success');
+                    
+                    // Update local data
+                    const order = this.orders.find(o => o.id === orderId);
+                    if (order) {
+                        order.status = newStatus;
+                        order.updated_at = new Date().toISOString();
+                    }
+                    
+                    this.renderOrders();
+                    this.updateStatistics();
+                    
+                } catch (error) {
+                    console.error('Error updating order status:', error);
+                    showAlert('Error updating order status. Please try again.', 'error');
+                }
+            }
+
+            viewOrderDetails(orderId) {
+                const order = this.orders.find(o => o.id === orderId);
+                if (!order) return;
+
+                const modalTitle = document.getElementById('modalOrderTitle');
+                const modalContent = document.getElementById('modalOrderContent');
+
+                modalTitle.textContent = `Order #${order.id} Details`;
+
+                const orderTotal = this.calculateOrderTotal(order);
+                const createdTime = formatDateTime(order.created_at);
+                const updatedTime = formatDateTime(order.updated_at);
+
+                modalContent.innerHTML = `
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="form-label">Order ID:</label>
+                                <p>#${order.id}</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="form-label">Table:</label>
+                                <p>${order.table_number ? `Table ${order.table_number}` : 'No table assigned'}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="form-label">Status:</label>
+                                <p>${getStatusBadge(order.status)}</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label class="form-label">Total:</label>
+                                <p style="font-size: 1.2rem; font-weight: bold; color: #27ae60;">${orderTotal}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Created:</label>
+                        <p>${createdTime}</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Last Updated:</label>
+                        <p>${updatedTime}</p>
+                    </div>
+                    
+                    ${order.notes ? `
+                        <div class="form-group">
+                            <label class="form-label">Notes:</label>
+                            <p style="font-style: italic;">${order.notes}</p>
+                        </div>
+                    ` : ''}
+                    
+                    <div class="form-group">
+                        <label class="form-label">Order Items:</label>
+                        <div class="table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Quantity</th>
+                                        <th>Unit Price</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${order.items ? order.items.map(item => {
+                                        const menuItem = this.menuItems.find(mi => mi.id === item.menu_item);
+                                        const itemName = menuItem ? menuItem.name : `Item #${item.menu_item}`;
+                                        
+                                        return `
+                                            <tr>
+                                                <td>${itemName}</td>
+                                                <td>${item.quantity}</td>
+                                                <td>${formatCurrency(item.unit_price || 0)}</td>
+                                                <td>${formatCurrency(item.line_total || 0)}</td>
+                                            </tr>
+                                        `;
+                                    }).join('') : '<tr><td colspan="4">No items</td></tr>'}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Update Status:</label>
+                        <div style="display: flex; gap: 0.5rem;">
+                            ${order.status === 'R' ? `
+                                <button class="btn btn-warning" onclick="orderManager.updateOrderStatus(${order.id}, 'P'); orderManager.closeModal();">
+                                    Start Preparing
+                                </button>
+                            ` : ''}
+                            ${order.status === 'P' ? `
+                                <button class="btn btn-success" onclick="orderManager.updateOrderStatus(${order.id}, 'C'); orderManager.closeModal();">
+                                    Mark Complete
+                                </button>
+                            ` : ''}
+                            ${order.status === 'C' ? `
+                                <span class="badge badge-success">Order Completed</span>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+
+                document.getElementById('orderModal').classList.remove('hidden');
+            }
+
+            updateStatistics() {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                const todayOrders = this.orders.filter(order => {
+                    const orderDate = new Date(order.created_at);
+                    orderDate.setHours(0, 0, 0, 0);
+                    return orderDate.getTime() === today.getTime();
+                });
+
+                const activeOrders = this.orders.filter(order => order.status !== 'C');
+                
+                const completedTodayOrders = todayOrders.filter(order => order.status === 'C');
+                const avgPrepTime = this.calculateAveragePreparationTime(completedTodayOrders);
+                
+                const todayRevenue = todayOrders.reduce((sum, order) => {
+                    const orderTotal = order.items ? order.items.reduce((itemSum, item) => 
+                        itemSum + parseFloat(item.line_total || 0), 0) : 0;
+                    return sum + orderTotal;
+                }, 0);
+
+                document.getElementById('totalOrdersToday').textContent = todayOrders.length;
+                document.getElementById('activeOrders').textContent = activeOrders.length;
+                document.getElementById('avgOrderTime').textContent = Math.round(avgPrepTime);
+                document.getElementById('todayRevenue').textContent = formatCurrency(todayRevenue);
+            }
+
+            calculateAveragePreparationTime(completedOrders) {
+                if (completedOrders.length === 0) return 0;
+
+                const totalTime = completedOrders.reduce((sum, order) => {
+                    const created = new Date(order.created_at);
+                    const updated = new Date(order.updated_at);
+                    const prepTime = (updated - created) / (1000 * 60); // minutes
+                    return sum + prepTime;
+                }, 0);
+
+                return totalTime / completedOrders.length;
+            }
+
+            getTimeAgo(date) {
+                const now = new Date();
+                const diffMs = now - date;
+                const diffMins = Math.floor(diffMs / 60000);
+                const diffHours = Math.floor(diffMins / 60);
+
+                if (diffMins < 1) return 'Just now';
+                if (diffMins < 60) return `${diffMins}m ago`;
+                if (diffHours < 24) return `${diffHours}h ago`;
+                return date.toLocaleDateString();
+            }
+
+            closeModal() {
+                document.getElementById('orderModal').classList.add('hidden');
+            }
+        }
+
+        // Initialize order manager when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            window.orderManager = new OrderManager();
+        });
+    </script>
+</body>
+</html>
