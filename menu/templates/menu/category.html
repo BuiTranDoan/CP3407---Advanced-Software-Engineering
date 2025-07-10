@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Category{% endblock title %}
+{% block content %}
+
+<!-- Back Button Section -->
+<div class="container py-3">
+  <a href="{% url 'menu' %}" class="btn btn-secondary">Go Back</a>
+</div>
+
+<h1>Category List</h1>
+<a href="{% url 'category_add' %}" class="btn btn-primary mb-3">Add New Category</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Category Name</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for category in categories %}
+    <tr>
+      <td>{{ category.name }}</td>
+      <td>{{ category.description }}</td>
+      <td>
+        <a href="{% url 'category_edit' category.id %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'category_delete' category.id %}" class="btn btn-danger">Delete</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="3">No categories available.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

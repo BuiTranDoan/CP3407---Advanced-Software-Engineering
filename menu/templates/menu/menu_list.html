@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Menu - RMS{% endblock title %}
+{% block content %}
+
+<!-- Back Button Section -->
+<div class="container py-3">
+  <a href="{% url 'menu' %}" class="btn btn-secondary">Go Back</a>
+</div>
+
+
+<h1>Menu Items</h1>
+
+<a href="#" class="btn btn-primary mb-3">Add New Menu Item</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Customizations</th>
+      <th>Total Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+    <tr>
+      <td>{{ item.category.name }}</td>
+      <td>{{ item.name }}</td>
+      <td>S${{ item.price }}</td>
+      <td>
+          {% for customizations in item.customization.all %}
+              {{ customizations.name }} (S${{ customizations.price }})
+              {% if not forloop.last %}, {% endif %}
+              {% empty %}
+                  No Customization
+          {% endfor %}
+      </td>
+      <td>S${{ item.get_customized_price }}</td>
+      <td>
+        <a href="#" class="btn btn-primary">View</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="5">No menu items available.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
