@@ -12,7 +12,7 @@ class Category(models.Model):
 class Customization(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField(blank=True, null=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='customizations')
     is_available = models.BooleanField(default=True)
 

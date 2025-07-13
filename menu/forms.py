@@ -12,3 +12,11 @@ class CustomizationForm(forms.ModelForm):
     class Meta:
         model = Customization
         fields = ['name', 'category', 'description', 'price', 'is_available']
+
+class MenuItemForm(forms.ModelForm):
+    class Meta:
+        model = MenuItem
+        fields = ['name', 'category', 'customization', 'description', 'price', 'is_available']
+        widgets = {
+            'customization' : forms.CheckboxSelectMultiple(),
+        }

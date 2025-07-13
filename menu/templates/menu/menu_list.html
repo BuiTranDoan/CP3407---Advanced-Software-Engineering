@@ -10,14 +10,14 @@
 
 <h1>Menu Items</h1>
 
-<a href="#" class="btn btn-primary mb-3">Add New Menu Item</a>
+<a href="{% url 'menu_add' %}" class="btn btn-primary mb-3">Add New Menu Item</a>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Category</th>
       <th>Name</th>
       <th>Price</th>
+      <th>Category</th>
       <th>Customizations</th>
       <th>Total Price</th>
       <th>Actions</th>
@@ -26,9 +26,9 @@
   <tbody>
     {% for item in items %}
     <tr>
-      <td>{{ item.category.name }}</td>
       <td>{{ item.name }}</td>
       <td>S${{ item.price }}</td>
+      <td>{{ item.category.name }}</td>
       <td>
           {% for customizations in item.customization.all %}
               {{ customizations.name }} (S${{ customizations.price }})
@@ -39,7 +39,8 @@
       </td>
       <td>S${{ item.get_customized_price }}</td>
       <td>
-        <a href="#" class="btn btn-primary">View</a>
+        <a href="{% url 'menu_edit' item.id %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'menu_delete' item.id %}" class="btn btn-danger">Delete</a>
       </td>
     </tr>
     {% empty %}
