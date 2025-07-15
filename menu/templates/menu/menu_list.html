@@ -3,14 +3,16 @@
 {% block content %}
 
 <!-- Back Button Section -->
-<div class="container py-3">
-  <a href="{% url 'menu' %}" class="btn btn-secondary">Go Back</a>
+<!--<div class="container py-3">-->
+<!--  <a href="{% url 'menu' %}" class="btn btn-secondary">Go Back</a>-->
+<!--</div>-->
+
+<div class="container">
+  <h1>Menu Items</h1>
+  <a href="{% url 'menu' %}" class="btn btn-secondary mb-3">Go Back</a>
+  <a href="{% url 'menu_add' %}" class="btn btn-primary mb-3">Add New Menu Item</a>
 </div>
 
-
-<h1>Menu Items</h1>
-
-<a href="{% url 'menu_add' %}" class="btn btn-primary mb-3">Add New Menu Item</a>
 
 <table class="table">
   <thead>
@@ -39,7 +41,7 @@
       </td>
       <td>S${{ item.get_customized_price }}</td>
       <td>
-        <a href="{% url 'menu_edit' item.id %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'menu_edit' item.id %}" class="btn btn-warning">Edit</a>
         <a href="{% url 'menu_delete' item.id %}" class="btn btn-danger">Delete</a>
       </td>
     </tr>

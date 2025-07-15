@@ -13,5 +13,5 @@ class OrderAdmin(admin.ModelAdmin):
 
 @admin.register(OrderItem)
 class OrderItemAdmin(admin.ModelAdmin):
-    list_display = ('id', 'order', 'menu_item', 'quantity', 'unit_price', 'line_total')
+    list_display = ('id', 'order', 'menu_item', 'unit_price', 'quantity', 'line_total')
 

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Order Item{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h1>{{ orderitem.menu_item }}</h1>
+    <a href="{% url 'orderitem' %}" class="btn btn-secondary">Go Back</a>
+</div>
+
+
+
+<div class="container mt-5">
+    <p>{{ orderitem.created_at }}</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Customization</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ orderitem.order }}</td>
+                <td>{{ orderitem.quantity }}</td>
+                <td>{{ orderitem.menu_item.price }}</td>
+                <td>
+                    {% for customization in orderitem.customizations.all %}
+                        {{ customization.name }} ({{ customization.price}}){% if not forloop.last %}, {% endif %}
+                        {% empty %}
+                             No Customization
+                    {% endfor %}
+                </td>
+                <td>{{ orderitem.get_total_price }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

@@ -80,7 +80,7 @@ def customization_edit(request, pk):
             return redirect('customization')
     else:
         form = CustomizationForm(instance=customization_obj)
-    return render(request, 'menu/category_add_edit.html', {'form':form})
+    return render(request, 'menu/customization_add_edit.html', {'form':form})
 
 def customization_delete(request, pk):
     customization_obj = get_object_or_404(Customization, id=pk)
@@ -113,7 +113,7 @@ def menu_edit(request, pk):
             return redirect('menu_list')
     else:
         form = MenuItemForm(instance=item)
-    return render(request, 'menu/menu_add_edit.html', {'form': form})
+    return render(request, 'menu/menu_edit.html', {'form': form, 'item': item})
 
 def menu_delete(request, pk):
     item = get_object_or_404(MenuItem, id=pk)

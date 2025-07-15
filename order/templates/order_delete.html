@@ -3,11 +3,11 @@
 {% block content %}
 
 <div class="container">
-  <h1>Confirm Delete "{{ item.name }}"?</h1>
+  <h1>Confirm Delete "{{ order.order_number }}"?</h1>
 
   <form method="post">
     {% csrf_token %}
-    <a href="{% url 'menu_list' %}" class="btn btn-secondary">Cancel</a>
+    <a href="{% url 'order_detail' order.id %}" class="btn btn-secondary">Cancel</a>
     <button type="submit" class="btn btn-danger">Confirm</button>
   </form>
 
