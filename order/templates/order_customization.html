@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Order{% endblock %}
+{% block content %}
+
+<div class="container">
+<!-- order_customization.html -->
+<h2>Customize: {{ orderitem.menu_item.name }}</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Save Customizations</button>
+</form>
+</div>
+
+{% endblock %}

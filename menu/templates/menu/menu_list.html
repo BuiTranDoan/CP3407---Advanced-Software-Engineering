@@ -18,10 +18,8 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Price</th>
       <th>Category</th>
-      <th>Customizations</th>
-      <th>Total Price</th>
+      <th>Price</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -29,17 +27,8 @@
     {% for item in items %}
     <tr>
       <td>{{ item.name }}</td>
-      <td>S${{ item.price }}</td>
       <td>{{ item.category.name }}</td>
-      <td>
-          {% for customizations in item.customization.all %}
-              {{ customizations.name }} (S${{ customizations.price }})
-              {% if not forloop.last %}, {% endif %}
-              {% empty %}
-                  No Customization
-          {% endfor %}
-      </td>
-      <td>S${{ item.get_customized_price }}</td>
+      <td>S${{ item.price }}</td>
       <td>
         <a href="{% url 'menu_edit' item.id %}" class="btn btn-warning">Edit</a>
         <a href="{% url 'menu_delete' item.id %}" class="btn btn-danger">Delete</a>

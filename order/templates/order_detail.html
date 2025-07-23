@@ -12,11 +12,8 @@
     <p><strong>Table:</strong> {{ order.table_number }}</p>
     <p><strong>Order Status:</strong> {{ order.get_status_display }}</p>
     <p><strong>Payment Status:</strong> {{ order.get_payment_display }} </p>
-<!--    <p><strong>Created At:</strong> {{ order.created_at }}</p>-->
-<!--    <p><strong>Updated At:</strong> {{ order.updated_at }}</p>-->
 
-
-    <a href="{% url 'orderitem_add' %}" class="btn btn-primary mb-3">Add New Item</a>
+    <a href="{% url 'orderitem_add' order.id %}" class="btn btn-primary mb-3">Add New Item</a>
     <a href="{% url 'order_edit' order.id %}" class="btn btn-warning mb-3">Edit</a>
     <a href="{% url 'order_delete' order.id %}" class="btn btn-danger mb-3">Delete</a>
     <table class="table">
@@ -45,7 +42,8 @@
                 </td>
                 <td>{{ order_item.get_total_price }}</td>
                 <td>
-                    <a href="#" class="btn btn-primary">View</a>
+                    <a href="{% url 'orderitem_edit' order_item.id %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'orderitem_delete' order_item.id %}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             {% empty %}

@@ -1,9 +1,11 @@
 from rest_framework import viewsets
 from .models import Order, OrderItem
-from .forms import OrderForm
+from menu.models import MenuItem, Customization
+from .forms import OrderForm, OrderItemForm, CustomizationsForm
 from .serializers import OrderSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from django.shortcuts import get_object_or_404, render, redirect
+from django.contrib import messages
 
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all().order_by('-created_at')
@@ -59,24 +61,51 @@ def orderitem(request):
         orderitem.refresh_from_db()
     return render(request, 'orderitem.html', {'orderitems':orderitems})
 
-def orderitem_add(request):
+def orderitem_add(request, pk):
+    order = get_object_or_404(Order, id=pk)
     if request.method == 'POST':
         form = OrderItemForm(request.POST)
         if form.is_valid():
-            order = form.save(commit=False)
-            order.save()
-
-            return redirect('order_detail', pk=order.id)
+            orderitem = form.save(commit=False)
+            orderitem.order = order
+            orderitem.save()
+            messages.success(request, 'Order item added successfully')
+            return redirect('orderitem_customization', pk=orderitem.pk)
     else:
-        form = OrderForm()
-    return render(request, 'order_add.html', {'form': form})
+        form = OrderItemForm()
+    return render(request, 'order_add.html', {'form': form, 'order': order})
 
 def orderitem_detail(request, pk):
     orderitem = get_object_or_404(OrderItem, id=pk)
     return render(request, 'orderitem_detail.html', {'orderitem': orderitem})
 
 def orderitem_edit(request, pk):
-    pass
+    orderitem = get_object_or_404(OrderItem, pk=pk)
+    order = orderitem.order
+    if request.method == 'POST':
+        form = OrderItemForm(request.POST, instance=orderitem)
+        if form.is_valid():
+            form.save()
+            return redirect('orderitem_customization', pk=orderitem.pk)
+    else:
+        form = OrderItemForm(instance=orderitem)
+    return render(request, 'orderitem_edit.html', {'form': form, 'orderitem': orderitem, 'order': order})
 
 def orderitem_delete(request, pk):
-    pass
+    orderitem = get_object_or_404(OrderItem, id=pk)
+    order = orderitem.order
+    if request.method == 'POST':
+        orderitem.delete()
+        return redirect('order_detail', pk=order.pk)
+    return render(request, 'orderitem_delete.html', {'orderitem': orderitem, 'order': order})
+
+def orderitem_customization(request, pk):
+    orderitem = get_object_or_404(OrderItem, pk=pk)
+    if request.method == 'POST':
+        form = CustomizationsForm(request.POST, instance=orderitem)
+        if form.is_valid():
+            form.save()
+            return redirect('order_detail', pk=orderitem.order.pk)
+    else:
+        form = CustomizationsForm(instance=orderitem)
+    return render(request, 'order_customization.html', {'form': form, 'orderitem': orderitem})

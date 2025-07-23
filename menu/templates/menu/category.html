@@ -3,12 +3,12 @@
 {% block content %}
 
 <!-- Back Button Section -->
-<div class="container py-3">
-  <a href="{% url 'menu' %}" class="btn btn-secondary">Go Back</a>
+<div class="container">
+  <h1>Category List</h1>
+  <a href="{% url 'menu' %}" class="btn btn-secondary mb-3">Go Back</a>
+  <a href="{% url 'category_add' %}" class="btn btn-primary mb-3">Add New Category</a>
 </div>
 
-<h1>Category List</h1>
-<a href="{% url 'category_add' %}" class="btn btn-primary mb-3">Add New Category</a>
 <table class="table">
   <thead>
     <tr>

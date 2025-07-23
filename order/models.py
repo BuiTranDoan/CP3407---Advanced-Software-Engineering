@@ -13,7 +13,7 @@ class Table(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return f'Table {self.table_number}, ({self.seat} seats) - {self.get_table_status_display()}'
+        return f'Table {self.table_number}'
 
 class Order(models.Model):
     STATUS_CHOICES = [

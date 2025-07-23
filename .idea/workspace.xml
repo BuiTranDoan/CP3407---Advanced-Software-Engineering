@@ -4,33 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90ff9b72-7f83-4c62-8441-96c42d4770f8" name="Changes" comment="Menu CRUD first done">
-      <change afterPath="$PROJECT_DIR$/menu/templates/menu/menu_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/order.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/order_add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/order_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/order_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/order_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/order_home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/orderitem.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/orderitem_add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/orderitem_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/orderitem_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/templates/orderitem_edit.html" afterDir="false" />
+    <list default="true" id="90ff9b72-7f83-4c62-8441-96c42d4770f8" name="Changes" comment="Order CRUD">
+      <change beforePath="$PROJECT_DIR$/.idea/CP3407---Advanced-Software-Engineering1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CP3407---Advanced-Software-Engineering1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d5efe99d-25ce-46f1-9c85-de18ebbb6d5f.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d5efe99d-25ce-46f1-9c85-de18ebbb6d5f/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/templates/menu/category_add_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/category_add_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/templates/menu/menu_add_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/menu_add_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/templates/menu/menu_delete_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/menu_delete_confirm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/templates/menu/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/templates/menu/customization.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/customization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/templates/menu/customization_add_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/customization_add_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu/templates/menu/menu_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/menu_home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu/templates/menu/menu_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/menu_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templates/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templates/order_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/order_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templates/order_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/order_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templates/order_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/order_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templates/orderitem.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/orderitem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templates/orderitem_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/order_customization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templates/orderitem_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/orderitem_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templates/orderitem_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/orderitem_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,21 +65,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "iteration-1",
-    "last_opened_file_path": "/Users/banyarsawthit/SoftwareDevelopment/GitHub/CP3407-ASE/menu/templates/menu",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#1 on iteration-1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/banyarsawthit/SoftwareDevelopment/GitHub/CP3407-ASE/menu/templates/menu&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/menu/templates/menu" />
@@ -205,6 +205,100 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="CP3407-ASE" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="CP3407-ASE" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="CP3407---Advanced-Software-Engineering1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.11 virtualenv at ~/SoftwareDevelopment/GitHub/CP3407-ASE/.venv" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="CP3407---Advanced-Software-Engineering1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.11 virtualenv at ~/SoftwareDevelopment/GitHub/CP3407-ASE/.venv" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -235,7 +329,12 @@
       <workItem from="1752474293168" duration="62000" />
       <workItem from="1752475613489" duration="6530000" />
       <workItem from="1752489439345" duration="3484000" />
-      <workItem from="1752541957982" duration="27747000" />
+      <workItem from="1752541957982" duration="29080000" />
+      <workItem from="1752633395287" duration="4102000" />
+      <workItem from="1752638649672" duration="17661000" />
+      <workItem from="1752685347024" duration="10000" />
+      <workItem from="1752767568158" duration="1227000" />
+      <workItem from="1752857858948" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="Category pages">
       <option name="closed" value="true" />
@@ -253,7 +352,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752426113974</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Order CRUD">
+      <option name="closed" value="true" />
+      <created>1752604191039</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752604191039</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +380,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Category pages" />
     <MESSAGE value="Menu CRUD first done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu CRUD first done" />
+    <MESSAGE value="Order CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Order CRUD" />
   </component>
 </project>
