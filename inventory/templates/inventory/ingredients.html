@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Ingredients{% endblock title %}
+{% block content %}
+
+<div class="container">
+  <h1>Ingredients</h1>
+</div>
+
+<div class="container mt-5">
+    <a href="{% url 'inventory' %}" class="btn btn-secondary mb-3">Go Back</a>
+    <a href="{% url 'ingredient_add' %}" class="btn btn-primary mb-3">Add Ingredients</a>
+    <div class="card-x">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Unit</th>
+                <th>Description</th>
+                <th>Total Purchased</th>
+                <th>Total Used</th>
+                <th>Remaining Stock</th>
+                <th>Latest Cost Per Unit</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ingredient in ingredients %}
+                <tr>
+                    <td><a href="{% url 'ingredient_detail' ingredient.id %}">{{ ingredient.name }}</a></td>
+                    <td>{{ ingredient.unit }}</td>
+                    <td>{{ ingredient.description }}</td>
+                    <td>{{ ingredient.stock_level }}</td>
+                    <td>{{ ingredient.stock_level }}</td>
+                    <td>{{ ingredient.stock_level }}</td>
+                    <td>S${{ ingredient.latest_cost_per_unit }}</td>
+                    <td>
+                        <a href="{% url 'ingredient_detail' ingredient.id %}" class="btn btn-primary btn-sm">View</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+
+{% endblock %}

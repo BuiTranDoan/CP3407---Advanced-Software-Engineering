@@ -1,15 +1,10 @@
 from django.contrib import admin
-from .models import Category, InventoryItem
+from inventory.models import IngredientUsage, Ingredient, IngredientPurchase
 
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
-    search_fields = ('name',)
+#admin.site.register(IngredientUsage)
+@admin.register(Ingredient)
+class IngredientAdmin(admin.ModelAdmin):
+    list_display = ('name', 'unit', 'description', 'stock_level')
 
-@admin.register(InventoryItem)
-class InventoryItemAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'quantity', 'unit', 'threshold', 'last_updated')
-    search_fields = ('name', 'supplier')
-    list_filter = ('category', 'supplier')
-    ordering = ('-last_updated',)
-
+admin.site.register(IngredientUsage)
+admin.site.register(IngredientPurchase)

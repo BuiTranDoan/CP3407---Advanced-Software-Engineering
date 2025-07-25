@@ -33,3 +33,16 @@ footer {
     color: #2c3e50;
     margin-bottom: 0.5rem;
 }
+
+h1 {
+    text-align: center; /* Centers the text horizontally */
+    margin: 0; /* Optional: Removes default margin */
+}
+
+th a {
+    color: #000000;
+}
+
+th a:hover {
+    color: #0a58ca;
+}
