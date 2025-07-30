@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Table{% endblock title %}
+{% block content %}
+
+<div class="container">
+    <h1>Table</h1>
+</div>
+<div class="container mt-5">
+    <a href="{% url 'order_home' %}" class="btn btn-secondary mb-3">Go Back</a>
+    <a href="{% url 'table_add' %}" class="btn btn-primary mb-3">Add New Table</a>
+    <div class="card-x">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Seat</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for table in tables %}
+                <tr>
+                    <td>Table: {{ table.table_number }}</td>
+                    <td>{{ table.seat}}</td>
+                    <td>{{ table.get_table_status_display }}</td>
+                    <td>
+                        <a href="{% url 'table_edit' table.id %}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{% url 'table_delete' table.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+{% endblock %}

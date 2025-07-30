@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Delete Table{% endblock title %}
+{% block content %}
+
+<div class="container mt-5">
+    <h2>Are you sure you want to delete this table?</h2>
+</div>
+
+<div class="container">
+        <div class="alert alert-warning p-3">
+        <p>
+            <strong>
+                Table No. {{ table.table_number }} <br>
+                Number of Seat: {{ table.seat }} <br>
+            </strong>
+        </p>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <a href="{% url 'table' %}" class="btn btn-secondary mb-3">Cancel</a>
+        <button type="submit" class="btn btn-danger mb-3">Confirm Delete</button>
+    </form>
+
+</div>
+{% endblock %}

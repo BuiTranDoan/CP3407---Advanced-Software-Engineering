@@ -4,29 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90ff9b72-7f83-4c62-8441-96c42d4770f8" name="Changes" comment="Iteration I">
-      <change afterPath="$PROJECT_DIR$/inventory/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_usage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredients.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/inventory.html" afterDir="false" />
+    <list default="true" id="90ff9b72-7f83-4c62-8441-96c42d4770f8" name="Changes" comment="inventory_purchase">
+      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_usage_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_usage_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_usage_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/stock_audit_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_usage.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_usage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredients.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredients.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/templates/menu/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/templates/menu/menu_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/menu_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,21 +56,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "iteration-1",
-    "last_opened_file_path": "/Users/banyarsawthit/SoftwareDevelopment/GitHub/CP3407-ASE/menu/templates/menu",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#1 on iteration-1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/banyarsawthit/SoftwareDevelopment/GitHub/CP3407-ASE/menu/templates/menu&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/menu/templates/menu" />
@@ -333,7 +328,11 @@
       <workItem from="1752857858948" duration="4000" />
       <workItem from="1753233171508" duration="5804000" />
       <workItem from="1753247825545" duration="33137000" />
-      <workItem from="1753427401547" duration="1559000" />
+      <workItem from="1753427401547" duration="17763000" />
+      <workItem from="1753530114851" duration="2446000" />
+      <workItem from="1753751645886" duration="705000" />
+      <workItem from="1753758571661" duration="13281000" />
+      <workItem from="1753804643150" duration="604000" />
     </task>
     <task id="LOCAL-00001" summary="Category pages">
       <option name="closed" value="true" />
@@ -367,7 +366,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753233226682</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="inventory_purchase">
+      <option name="closed" value="true" />
+      <created>1753429276381</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1753429276381</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,6 +396,7 @@
     <MESSAGE value="Menu CRUD first done" />
     <MESSAGE value="Order CRUD" />
     <MESSAGE value="Iteration I" />
-    <option name="LAST_COMMIT_MESSAGE" value="Iteration I" />
+    <MESSAGE value="inventory_purchase" />
+    <option name="LAST_COMMIT_MESSAGE" value="inventory_purchase" />
   </component>
 </project>

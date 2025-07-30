@@ -2,14 +2,13 @@
 {% block title %}Inventory{% endblock title %}
 {% block content %}
 
-<!-- Back Button Section -->
 <div class="container">
-    <h1>Menu Home</h1>
+    <h1>Inventory</h1>
 </div>
 
 <div class="container mt-5">
-    <a href="{% url 'home' %}" class="btn btn-secondary mb-3">Go Back</a>
-    <div class="row d-flex">
+    <a href="{% url 'home' %}" class="btn btn-secondary mb-3">Home</a>
+    <div class="row">
         <div class="col-md-4 text-center">
             <div class="card-x">
             <a href="{% url 'ingredient_purchase' %}">

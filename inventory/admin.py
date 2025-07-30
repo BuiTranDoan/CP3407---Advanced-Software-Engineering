@@ -1,5 +1,6 @@
 from django.contrib import admin
-from inventory.models import IngredientUsage, Ingredient, IngredientPurchase
+from inventory.models import IngredientUsage, Ingredient, IngredientPurchase, StockAudit
+
 
 #admin.site.register(IngredientUsage)
 @admin.register(Ingredient)
@@ -8,3 +9,4 @@ class IngredientAdmin(admin.ModelAdmin):
 
 admin.site.register(IngredientUsage)
 admin.site.register(IngredientPurchase)
+admin.site.register(StockAudit)

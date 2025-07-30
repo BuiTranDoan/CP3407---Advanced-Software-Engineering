@@ -54,7 +54,7 @@
                 <tr>
                     <td>{{ ingredient.purchased_at|date:"Y-m-d" }}</td>
                     <td>{{ ingredient.ingredient.name }}</td>
-                    <td>{{ ingredient.quantity }}</td>
+                    <td>{{ ingredient.quantity }} {{ ingredient.ingredient.unit }}</td>
                     <td>S${{ ingredient.cost }}</td>
                     <td>S${{ ingredient.ingredient.latest_cost_per_unit }}</td>
                     <td>

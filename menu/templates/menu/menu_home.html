@@ -5,38 +5,38 @@
 
 <!-- Hero Section -->
 <div class="container">
-    <h1>Menu Home</h1>
-    <a href="{% url 'home' %}" class="btn btn-secondary">Go Back</a>
+    <h1>Menu</h1>
 </div>
 
 <!-- Features Section -->
-<div class="container py-5">
+<div class="container mt-5">
+    <a href="{% url 'home' %}" class="btn btn-secondary mb-3">Home</a>
     <div class="row">
         <div class="col-md-4 text-center">
             <div class="card-x">
-            <a href="{% url 'category' %}">
-                <h2>Category</h2>
-                <i class="fas fa-th-list fa-3x mb-3"></i>
-                <p>Organize menu items into categories for better structure.</p>
-            </a>
+                <a href="{% url 'category' %}">
+                    <h2>Category</h2>
+                    <i class="fas fa-th-list fa-3x mb-3"></i>
+                    <p>Organize menu items into categories for better structure.</p>
+                </a>
             </div>
         </div>
         <div class="col-md-4 text-center">
             <div class="card-x">
-            <a href="{% url 'menu_list' %}">
-                <h2>Menu</h2>
-                <i class="fas fa-utensils fa-3x mb-3"></i>
-                <p>View and manage all menu items with descriptions and prices.</p>
-            </a>
+                <a href="{% url 'menu_list' %}">
+                    <h2>Menu</h2>
+                    <i class="fas fa-utensils fa-3x mb-3"></i>
+                    <p>View and manage all menu items with descriptions and prices.</p>
+                </a>
             </div>
         </div>
         <div class="col-md-4 text-center">
             <div class="card-x">
-            <a href="{% url 'customization' %}">
-                <h2>Customization</h2>
-                <i class="fas fa-edit fa-3x mb-3"></i>
-                <p>Add customization options for menu items to enhance customer experience.</p>
-            </a>
+                <a href="{% url 'customization' %}">
+                    <h2>Customization</h2>
+                    <i class="fas fa-edit fa-3x mb-3"></i>
+                    <p>Add customization options for menu items to enhance customer experience.</p>
+                </a>
             </div>
         </div>
     </div>

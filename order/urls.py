@@ -7,6 +7,11 @@ router.register(r'orders', OrderViewSet, basename='order')
 
 urlpatterns = [
     path('', order_home, name='order_home'),
+    path('table/', table, name='table'),
+    path('table/add/', table_add, name='table_add'),
+    path('table/edit/<int:table_id>', table_edit, name='table_edit'),
+    path('table/delete/<int:table_id>', table_delete, name='table_delete'),
+
     path('order/', order, name='order'),
     path('order/detail/<int:pk>', order_detail, name='order_detail'),
     path('order/add', order_add, name='order_add'),

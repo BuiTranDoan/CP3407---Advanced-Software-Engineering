@@ -1,7 +1,7 @@
 from rest_framework import viewsets
-from .models import Order, OrderItem
+from .models import Order, OrderItem, Table
 from menu.models import MenuItem, Customization
-from .forms import OrderForm, OrderItemForm, CustomizationsForm
+from .forms import OrderForm, OrderItemForm, CustomizationsForm, TableForm
 from .serializers import OrderSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from django.shortcuts import get_object_or_404, render, redirect
@@ -11,6 +11,41 @@ class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all().order_by('-created_at')
     serializer_class = OrderSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
+
+def table(request):
+    tables = Table.objects.all()
+    return render(request, 'table.html', {'tables': tables})
+
+def table_add(request):
+    if request.method == 'POST':
+        form = TableForm(request.POST)
+        if form.is_valid():
+            table = form.save(commit=False)
+            table.save()
+            return redirect('table')
+    else:
+        form = TableForm()
+        return render(request, 'table_add.html', {'form': form})
+
+def table_edit(request, table_id):
+    table = get_object_or_404(Table, pk=table_id)
+    if request.method == 'POST':
+        form = TableForm(request.POST, instance=table)
+        if form.is_valid():
+            table = form.save(commit=False)
+            table.save()
+            return redirect('table')
+    else:
+        form = TableForm(instance=table)
+        return render(request, 'table_edit.html', {'form': form})
+
+def table_delete(request, table_id):
+    table = get_object_or_404(Table, pk=table_id)
+    if request.method == 'POST':
+        table.delete()
+        return redirect('table')
+    else:
+        return render(request, 'table_delete.html', {'table': table})
 
 def order_home(request):
     return render(request, 'order_home.html')

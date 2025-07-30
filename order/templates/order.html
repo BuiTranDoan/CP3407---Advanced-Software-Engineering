@@ -2,11 +2,6 @@
 {% block title %}Orders{% endblock %}
 {% block content %}
 
-<!-- Back Button Section -->
-<!--<div class="container py-3">-->
-<!--    <a href="{% url 'order_home' %}" class="btn btn-secondary">Go Back</a>-->
-<!--  </div>-->
-
 <div class="container">
     <h1>Orders</h1>
     <a href="{% url 'order_home' %}" class="btn btn-secondary mb-3">Go Back</a>
@@ -31,7 +26,7 @@
                 <td>{{ order.get_status_display }}</td>
                 <td>S${{ order.get_total_price }}</td>
                 <td>{% if order.is_paid %}Paid{% else %}Unpaid{% endif %}</td>
-                <td><a href="{% url 'order_detail' order.id %}" class="btn btn-primary mb-3">Detail</a></td>
+                <td><a href="{% url 'order_detail' order.id %}" class="btn btn-info mb-3">View</a></td>
             </tr>
             {% empty %}
             <tr>
