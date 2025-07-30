@@ -2,11 +2,14 @@
 {% block title %}Order Items{% endblock %}
 {% block content %}
 
-
 <div class="container">
     <h1>Order Items</h1>
+</div>
+
+<div class="container mt-5">
     <a href="{% url 'order_home' %}" class="btn btn-secondary mb-3">Go Back</a>
-    <table class="table">
+    <div class="card-x">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Menu Item</th>
@@ -39,6 +42,7 @@
             {% endfor %}
         </tbody>
     </table>
+    </div>
 </div>
 
 {% endblock %}

@@ -4,10 +4,14 @@
 
 <div class="container">
     <h1>Orders</h1>
+</div>
+
+<div class="container mt-5">
     <a href="{% url 'order_home' %}" class="btn btn-secondary mb-3">Go Back</a>
     <a href="{% url 'order_add' %}" class="btn btn-primary mb-3">Add New Order</a>
-    <table class="table">
-        <thead>
+    <div class="card-x">
+        <table class="table">
+            <thead>
             <tr>
                 <th>Order Number</th>
                 <th>Order at</th>
@@ -16,12 +20,11 @@
                 <th>Payment Status</th>
                 <th>Action</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             {% for order in orders %}
             <tr>
                 <td>{{ order.order_number }}</td>
-<!--                <td>{{ order.created_at|date:"Y-m-d H:i" }}</td>-->
                 <td>{{ order.table_number }}  ({{ order.updated_at|time:"i:s" }})</td>
                 <td>{{ order.get_status_display }}</td>
                 <td>S${{ order.get_total_price }}</td>
@@ -33,8 +36,9 @@
                 <td colspan="5">No orders available.</td>
             </tr>
             {% endfor %}
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <!-- Auto Refresh Page per 10 seconds -->

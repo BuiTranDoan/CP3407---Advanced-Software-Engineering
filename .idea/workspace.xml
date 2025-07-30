@@ -4,24 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90ff9b72-7f83-4c62-8441-96c42d4770f8" name="Changes" comment="inventory_purchase">
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_usage_add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_usage_delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_usage_edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory/templates/inventory/stock_audit_form.html" afterDir="false" />
+    <list default="true" id="90ff9b72-7f83-4c62-8441-96c42d4770f8" name="Changes" comment="testing updates">
+      <change afterPath="$PROJECT_DIR$/center/templates/center/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/center/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_usage.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_usage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredients.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredients.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/RMS/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/RMS/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/templates/menu/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/templates/menu/customization.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/customization.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/templates/menu/menu_add_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/menu_add_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/templates/menu/menu_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/menu_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templates/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/templates/orderitem.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/templates/orderitem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +72,7 @@
       <recent name="$PROJECT_DIR$/static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/center/template/dashboard" />
       <recent name="$PROJECT_DIR$/static/images" />
     </key>
   </component>
@@ -332,7 +328,8 @@
       <workItem from="1753530114851" duration="2446000" />
       <workItem from="1753751645886" duration="705000" />
       <workItem from="1753758571661" duration="13281000" />
-      <workItem from="1753804643150" duration="604000" />
+      <workItem from="1753804643150" duration="16231000" />
+      <workItem from="1753854230670" duration="6292000" />
     </task>
     <task id="LOCAL-00001" summary="Category pages">
       <option name="closed" value="true" />
@@ -374,7 +371,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753429276381</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="testing updates">
+      <option name="closed" value="true" />
+      <created>1753844118266</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1753844118266</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,6 +402,7 @@
     <MESSAGE value="Order CRUD" />
     <MESSAGE value="Iteration I" />
     <MESSAGE value="inventory_purchase" />
-    <option name="LAST_COMMIT_MESSAGE" value="inventory_purchase" />
+    <MESSAGE value="testing updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing updates" />
   </component>
 </project>

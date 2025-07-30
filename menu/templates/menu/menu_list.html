@@ -2,21 +2,19 @@
 {% block title %}Menu - RMS{% endblock title %}
 {% block content %}
 
-<!-- Back Button Section -->
-<!--<div class="container py-3">-->
-<!--  <a href="{% url 'menu' %}" class="btn btn-secondary">Go Back</a>-->
-<!--</div>-->
-
 <div class="container">
   <h1>Menu Items</h1>
-  <a href="{% url 'menu' %}" class="btn btn-secondary mb-3">Go Back</a>
-  <a href="{% url 'menu_add' %}" class="btn btn-primary mb-3">Add New Menu Item</a>
 </div>
 
+<div class="container mt-5">
+  <a href="{% url 'menu' %}" class="btn btn-secondary mb-3">Go Back</a>
+  <a href="{% url 'menu_add' %}" class="btn btn-primary mb-3">Add New Menu Item</a>
 
+<div class="card-x">
 <table class="table">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>Category</th>
       <th>Price</th>
@@ -26,6 +24,7 @@
   <tbody>
     {% for item in items %}
     <tr>
+      <td>{{ item.id }}</td>
       <td>{{ item.name }}</td>
       <td>{{ item.category.name }}</td>
       <td>S${{ item.price }}</td>
@@ -41,5 +40,6 @@
     {% endfor %}
   </tbody>
 </table>
-
+</div>
+</div>
 {% endblock %}
