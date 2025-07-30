@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block title %}Order{% endblock %}
+{% block content %}
+
+<!-- Back Button Section -->
+<div class="container">
+    <h1>#{{ order.order_number }}</h1>
+    <a href="{% url 'order' %}" class="btn btn-secondary">Go Back</a>
+</div>
+
+<div class="container mt-5">
+    <p><strong>Table:</strong> {{ order.table_number }}</p>
+    <p><strong>Order Status:</strong> {{ order.get_status_display }}</p>
+    <p><strong>Payment Status:</strong> {{ order.get_payment_display }} </p>
+
+    <a href="{% url 'orderitem_add' order.id %}" class="btn btn-primary mb-3">Add New Item</a>
+    <a href="{% url 'order_edit' order.id %}" class="btn btn-warning mb-3">Edit</a>
+    <a href="{% url 'order_delete' order.id %}" class="btn btn-danger mb-3">Delete</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Menu Item</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>Customizations(Rate)</th>
+                <th>Total Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order_item in order_items %}
+            <tr>
+                <td>{{ order_item.menu_item.name }}</td>
+                <td>{{ order_item.quantity }}</td>
+                <td>{{ order_item.menu_item.price }}</td>
+                <td>
+                    {% for customization in order_item.customizations.all %}
+                        {{ customization.name }} ({{ customization.price}}){% if not forloop.last %}, {% endif %}
+                        {% empty %}
+                             No Customization
+                    {% endfor %}
+                </td>
+                <td>{{ order_item.get_total_price }}</td>
+                <td>
+                    <a href="{% url 'orderitem_edit' order_item.id %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'orderitem_delete' order_item.id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No items available for this order.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Total Price: {{ order.get_total_price }}</h3>
+
+</div>
+
+<!-- Auto Refresh Page per 10 seconds -->
+<script>
+    setTimeout(function() {
+        location.reload();
+    }, 10000);
+  </script>
+
+{% endblock %}

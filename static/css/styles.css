@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    background-color: #bcc8d4;
+    padding: 20px 0;
+}
+
+/* Card Styles */
+.card-x {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    text-align: center; /* Centers the text horizontally */
+    margin: 0; /* Optional: Removes default margin */
+}
+
+th a {
+    color: #000000;
+}
+
+th a:hover {
+    color: #0a58ca;
+}

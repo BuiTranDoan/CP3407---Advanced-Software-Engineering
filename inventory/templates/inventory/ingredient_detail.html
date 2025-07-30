@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Ingredient Detail{% endblock title %}
+{% block content %}
+
+<div class="container">
+  <h1>Ingredient Detail - {{ ingredient.name }}</h1>
+</div>
+
+<div class="container mt-5">
+    <a href="{% url 'ingredients' %}" class="btn btn-secondary mb-3">Back</a>
+    <a href="{% url 'ingredient_edit' ingredient.id %}" class="btn btn-warning mb-3">Edit Ingredient</a>
+    <a href="{% url 'stock_audit_add' ingredient.id %}" class="btn btn-success mb-3">Add Actual Stock</a>
+    <div class="card-x">
+        <p><strong>Unit:</strong> {{ ingredient.unit }}</p>
+        <p><strong>Total Purchased:</strong> {{ ingredient.total_purchase }} {{ ingredient.unit }}</p>
+        <p><strong>Total Used:</strong> {{ ingredient.total_use }} {{ ingredient.unit }}</p>
+        <p><strong>Calculated Stock:</strong> {{ ingredient.stock_level }} {{ ingredient.unit }}</p>
+        <p><strong>Last Actual Stock:</strong> {{ ingredient.last_actual_stock }} {{ ingredient.unit }}</p>
+    </div>
+    <h3 class="mt-4">Stock Audit History</h3>
+    <table class="table">
+        <thead>
+        <tr>
+        <th>Date</th>
+        <th>Actual Stock</th>
+        <th>Notes</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for audit in ingredient.stockaudit_set.all %}
+        <tr>
+        <td>{{ audit.recorded_at|date:"Y-m-d" }}</td>
+        <td>{{ audit.actual_stock }} {{ ingredient.unit }}</td>
+        <td>{{ audit.notes }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">No audit records.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Edit Ingredient{% endblock title %}
+{% block content %}
+<div class="container">
+  <h1>Edit Ingredient - {{ form.instance.name }}</h1>
+</div>
+
+<div class="container mt-5">
+    <form method="post">
+        {% csrf_token %}
+        <a href="{% url 'ingredient_detail' form.instance.id %}" class="btn btn-secondary mb-3">Cancel</a>
+        <button type="submit" class="btn btn-success mb-3">Save Changes</button>
+        <div class="card-x p-4">
+          {{ form.as_p }}
+        </div>
+    </form>
+</div>
+{% endblock %}

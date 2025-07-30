@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Ingredient Usage{% endblock title %}
+{% block content %}
+
+<div class="container">
+    <h1>Usage Record</h1>
+</div>
+
+<div class="container mt-5">
+    <a href="{% url 'inventory' %}" class="btn btn-secondary mb-3">Go Back</a>
+    <a href="{% url 'ingredient_usage_add' %}" class="btn btn-primary mb-3">Add Usage</a>
+    <div class="card-x">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    <a href="?sort=date_used&dir={% if current_sort == 'date_used' and current_dir == 'asc' %}desc{% else %}asc{% endif %}">
+                        Date
+                    </a>
+                    {% if current_sort == 'date_used' %}
+                        {% if current_dir == 'asc' %} ▲ {% else %} ▼ {% endif %}
+                    {% endif %}
+                </th>
+                <th>
+                    <a href="?sort=ingredient__name&dir={% if current_sort == 'ingredient__name' and current_dir == 'asc' %}desc{% else %}asc{% endif %}">
+                        Ingredient
+                    </a>
+                    {% if current_sort == 'ingredient__name' %}
+                        {% if current_dir == 'asc' %} ▲ {% else %} ▼ {% endif %}
+                    {% endif %}
+                </th>
+                <th>
+                    <a href="?sort=quantity&dir={% if current_sort == 'quantity' and current_dir == 'asc' %}desc{% else %}asc{% endif %}">
+                        Quantity Used
+                    </a>
+                    {% if current_sort == 'quantity' %}
+                        {% if current_dir == 'asc' %} ▲ {% else %} ▼ {% endif %}
+                    {% endif %}
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ingredient in ingredient_usage_all %}
+                <tr>
+                    <td>{{ ingredient.date_used|date:"Y-m-d" }}</td>
+                    <td>{{ ingredient.ingredient.name }}</td>
+                    <td>{{ ingredient.quantity }} {{ ingredient.ingredient.unit }}</td>
+                    <td>
+                        <a href="{% url 'ingredient_usage_edit' ingredient.id %}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{% url 'ingredient_usage_delete' ingredient.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Customization List{% endblock title %}
+{% block content %}
+
+<div class="container">
+  <h1>Customization</h1>
+</div>
+
+<div class="container mt-5">
+  <a href="{% url 'menu' %}" class="btn btn-secondary mb-3">Go Back</a>
+  <a href="{% url 'customization_add' %}" class="btn btn-primary mb-3">Add New Customization</a>
+</div>
+
+
+<div class="card-x">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for customization in customizations %}
+    <tr>
+      <td>{{ customization.id }}</td>
+      <td>{{ customization.name }}</td>
+      <td>{{ customization.category }}</td>
+      <td>{{ customization.price}}</td>
+      <td>
+        <a href="{% url 'customization_edit' customization.id %}" class="btn btn-warning">Edit</a>
+        <a href="{% url 'customization_delete' customization.id %}" class="btn btn-danger">Delete</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="3">No customizations available.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

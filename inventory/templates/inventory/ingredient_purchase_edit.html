@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Edit Purchase{% endblock title %}
+{% block content %}
+
+<!-- Back Button Section -->
+<div class="container">
+    <h1>Edit {{ purchase.ingredient.name }}</h1>
+</div>
+
+<div class="container mt-5">
+    <form method="post">
+        {% csrf_token %}
+        <a href="{% url 'ingredient_purchase' %}" class="btn btn-secondary mb-3">Go Back</a>
+        <button type="submit" class="btn btn-primary mb-3">Save</button>
+        <div class="card-x">
+            {{ form.as_p }}
+        </div>
+    </form>
+</div>
+
+{% endblock %}

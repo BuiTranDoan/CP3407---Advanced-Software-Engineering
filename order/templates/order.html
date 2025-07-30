@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Orders{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h1>Orders</h1>
+</div>
+
+<div class="container mt-5">
+    <a href="{% url 'order_home' %}" class="btn btn-secondary mb-3">Go Back</a>
+    <a href="{% url 'order_add' %}" class="btn btn-primary mb-3">Add New Order</a>
+    <div class="card-x">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Order Number</th>
+                <th>Order at</th>
+                <th>Order Status</th>
+                <th>Total Price</th>
+                <th>Payment Status</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.order_number }}</td>
+                <td>{{ order.table_number }}  ({{ order.updated_at|time:"i:s" }})</td>
+                <td>{{ order.get_status_display }}</td>
+                <td>S${{ order.get_total_price }}</td>
+                <td>{% if order.is_paid %}Paid{% else %}Unpaid{% endif %}</td>
+                <td><a href="{% url 'order_detail' order.id %}" class="btn btn-info mb-3">View</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No orders available.</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Auto Refresh Page per 10 seconds -->
+<script>
+    setTimeout(function() {
+        location.reload();
+    }, 10000);
+  </script>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Order Items{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h1>Order Items</h1>
+</div>
+
+<div class="container mt-5">
+    <a href="{% url 'order_home' %}" class="btn btn-secondary mb-3">Go Back</a>
+    <div class="card-x">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Menu Item</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for orderitem in orderitems %}
+            <tr>
+                <td>
+                    {{ orderitem.menu_item }} <small>({{orderitem.unit_price}})</small>
+                    <p><small>
+                        {% for customization in orderitem.customizations.all %}
+                        {{ customization.name }} ({{ customization.price}}){% if not forloop.last %}, {% endif %}
+                        {% empty %}
+                             No Customization
+                    {% endfor %}
+                    </small></p>
+                </td>
+                <td>{{ orderitem.quantity }}</td>
+                <td>{{ orderitem.get_total_price }}</td>
+                <td><a href="{% url 'orderitem_detail' orderitem.id %}" class="btn btn-primary mb-3">Detail</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No orders available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+{% endblock %}

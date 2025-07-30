@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Delete Item{% endblock %}
+{% block content %}
+
+<div class="container">
+  <h1>Confirm Delete "{{ order.order_number }}"?</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    <a href="{% url 'order_detail' order.id %}" class="btn btn-secondary">Cancel</a>
+    <button type="submit" class="btn btn-danger">Confirm</button>
+  </form>
+
+</div>
+{% endblock %}
