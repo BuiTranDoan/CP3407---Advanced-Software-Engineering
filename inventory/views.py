@@ -1,7 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from inventory.models import Ingredient, IngredientUsage, IngredientPurchase
 from inventory.forms import IngredientForm, IngredientPurchaseForm, IngredientUsageForm, StockAuditForm
 from datetime import date
+from decorators import *
 
 def inventory(request):
     return render(request, 'inventory/inventory.html')
@@ -24,6 +26,7 @@ def ingredient_purchase(request):
         'current_dir': direction,
     })
 
+@admin_required
 def ingredient_purchase_add(request):
     if request.method == 'POST':
         form = IngredientPurchaseForm(request.POST)
@@ -34,6 +37,7 @@ def ingredient_purchase_add(request):
         form = IngredientPurchaseForm()
     return render(request, 'inventory/ingredient_purchase_form.html', {'form': form})
 
+@admin_required
 def ingredient_purchase_edit(request, purchase_id):
     purchase = get_object_or_404(IngredientPurchase, id=purchase_id)
     if request.method == 'POST':
@@ -45,6 +49,7 @@ def ingredient_purchase_edit(request, purchase_id):
         form = IngredientPurchaseForm(instance=purchase)
     return render(request, 'inventory/ingredient_purchase_edit.html', {'form': form, 'purchase': purchase})
 
+@admin_required
 def ingredient_purchase_delete(request, purchase_id):
     purchase = get_object_or_404(IngredientPurchase, id=purchase_id)
 
@@ -71,6 +76,7 @@ def ingredient_usage(request):
         'current_dir': direction,
     })
 
+@admin_required
 def ingredient_usage_add(request):
     if request.method == 'POST':
         form = IngredientUsageForm(request.POST)
@@ -81,6 +87,7 @@ def ingredient_usage_add(request):
         form = IngredientUsageForm(initial={'date_used': date.today()})
     return render(request, 'inventory/ingredient_usage_add.html', {'form': form})
 
+@admin_required
 def ingredient_usage_edit(request, usage_id):
     usage = get_object_or_404(IngredientUsage, id=usage_id)
     if request.method == 'POST':
@@ -92,6 +99,7 @@ def ingredient_usage_edit(request, usage_id):
         form = IngredientUsageForm(instance=usage)
     return render(request, 'inventory/ingredient_usage_edit.html', {'form': form})
 
+@admin_required
 def ingredient_usage_delete(request, usage_id):
     usage = get_object_or_404(IngredientUsage, id=usage_id)
     if request.method == 'POST':
@@ -104,6 +112,7 @@ def ingredients(request):
     ingredients_list = Ingredient.objects.all()
     return render(request, 'inventory/ingredients.html', {'ingredients': ingredients_list})
 
+@admin_required
 def ingredient_add(request):
     if request.method == 'POST':
         form = IngredientForm(request.POST)
@@ -114,6 +123,7 @@ def ingredient_add(request):
         form = IngredientForm()
     return render(request, 'inventory/ingredient_add.html', {'form': form})
 
+@admin_required
 def ingredient_edit(request, ingredient_id):
     ingredient = get_object_or_404(Ingredient, id=ingredient_id)
     if request.method == 'POST':
@@ -130,6 +140,7 @@ def ingredient_detail(request, ingredient_id):
     ingredient = get_object_or_404(Ingredient, id=ingredient_id)
     return render(request, 'inventory/ingredient_detail.html', {'ingredient': ingredient})
 
+@admin_required
 def ingredient_delete(request, ingredient_id):
     ingredient = get_object_or_404(Ingredient, id=ingredient_id)
     if request.method == 'POST':
@@ -137,6 +148,7 @@ def ingredient_delete(request, ingredient_id):
         return redirect('ingredients')
     return render(request, 'inventory/ingredient_delete.html', {'ingredient': ingredient})
 
+@admin_required
 def stock_audit_add(request, ingredient_id):
     ingredient = get_object_or_404(Ingredient, id=ingredient_id)
     if request.method == 'POST':

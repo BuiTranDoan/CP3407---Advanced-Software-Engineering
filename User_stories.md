@@ -18,16 +18,16 @@
 - *Description*: As a manager, I want the system to track inventory levels so that I can restock items before they run out.
 ---
 
-[4] **Store labor/staff data**
+[4] **Manager/staff roles**
+- Priority High
+- Estimate: 3 days
+- *Description*: As a manager, I want different access levels for admin and counter staff so that system operations remain secure and users only see what they need.
+---
+
+[5] **Store labor/staff data**
 - Priority High
 - Estimate: 3 days
 - *Description*: As a manager, I want to store employee information and shifts so that I can manage staffing efficiently.
----
-
-[5] **Generate income/outcome reports**
-- Priority High
-- Estimate: 3 days
-- *Description*: As a manager, I want the system to generate daily and monthly reports so that I can monitor the restaurant's financial health.
 ---
 
 [6] **Dashboard overview**

@@ -6,6 +6,7 @@ from .serializers import OrderSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
+from decorators import admin_required
 
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all().order_by('-created_at')
@@ -16,6 +17,7 @@ def table(request):
     tables = Table.objects.all()
     return render(request, 'table.html', {'tables': tables})
 
+@admin_required
 def table_add(request):
     if request.method == 'POST':
         form = TableForm(request.POST)
@@ -27,6 +29,7 @@ def table_add(request):
         form = TableForm()
         return render(request, 'table_add.html', {'form': form})
 
+@admin_required
 def table_edit(request, table_id):
     table = get_object_or_404(Table, pk=table_id)
     if request.method == 'POST':
@@ -39,6 +42,7 @@ def table_edit(request, table_id):
         form = TableForm(instance=table)
         return render(request, 'table_edit.html', {'form': form})
 
+@admin_required
 def table_delete(request, table_id):
     table = get_object_or_404(Table, pk=table_id)
     if request.method == 'POST':
