@@ -9,7 +9,7 @@ Checklist:
 * Total estimated amount of work: 7 days
 
 User stories or tasks (see chapter 4):
-1. [Admin/staff login & roles](./user_stories/user_story_01_title.md), priority High, 3 days 
+1. [Manage staff access & info](./user_stories/user_story_01_title.md), priority High, 3 days 
 2. [Store labor/staff data](./user_stories/user_story_01_title.md), priority High, 3 days
 3. [Dashboard overview](./user_stories/user_story_01_title.md), priority High, 1 day
 ---

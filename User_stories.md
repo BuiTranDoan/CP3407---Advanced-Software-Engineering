@@ -18,10 +18,10 @@
 - *Description*: As a manager, I want the system to track inventory levels so that I can restock items before they run out.
 ---
 
-[4] **Manager/staff roles**
+[4] **Manager staff access & info**
 - Priority High
 - Estimate: 3 days
-- *Description*: As a manager, I want different access levels for admin and counter staff so that system operations remain secure and users only see what they need.
+- *Description*: As a manager, I want to add and edit staff details such as name, shift, and role, so that I can manage who can access the system and what features they can use.
 ---
 
 [5] **Store labor/staff data**

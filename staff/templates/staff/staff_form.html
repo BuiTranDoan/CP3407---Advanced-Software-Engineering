@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock title %}
+{% block content %}
+
+<div class="container">
+    <h1>{{ title }}</h1>
+</div>
+
+<div class="container mt-5">
+    <form method="post">
+        {% csrf_token %}
+        <a href="{% url 'staff_list' %}" class="btn btn-secondary mb-3">Go Back</a>
+        <button type="submit" class="btn btn-primary mb-3">Save</button>
+        <div class="card-x">
+            <h4>Account Info</h4>
+            {{ user_form.as_p }}
+            <h4>Staff Profile</h4>
+            {{ profile_form.as_p }}
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
