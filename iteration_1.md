@@ -1,28 +1,29 @@
-# Actual iteration-1 board, (see chapters 3 and 4), add your start and end dates 
+# Actual iteration-1 board, 11/06/20025 ~ (end date here...)
 
-Checklist: 
-1. github entry timestamps
-2. User stories are correct: see p39
 
-* Assumed Velocity: ?? 
-* Number of developers: ??
-* Total estimated amount of work: YY days
-
+* Assumed Velocity: 3 task per week
+* Number of developers: 4
+* Total estimated amount of work ( 4 developer workload) :  9 days
+---
 User stories or tasks (see chapter 4):
-1. [user story or task title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
-
+1. [Add menu items (user story 1)](./user_stories/user_story_04_add_menu_items.md), priority High, 2 days  
+2. [Store customer orders (user story 2)](./user_stories/user_story_01_store_customer_orders.md), priority High, 3 days  
+3. [Store inventory data (user story 3)](./user_stories/user_story_02_store_inventory_data.md), priority High, 3 days  
+4. [System Architecture & UI Sketching](./user_stories/task_architecture_prototype_sketch.md), internal task, 1 day
+---
 In progress:
-* Task-2 (developer name or initials), date started
-* ...
+
+* Add menu items (Banyar Saw Thit), started 10/06/2025
+* Store customer orders (Banyar Saw Thit), started 11/06/2025
+* Store inventory data (ZWE NANDA), started 11/06/2025
 
 Completed:
-* Task-3 (developer name or initials), date completed
-* ...
+* UI sketching for Add Menu Items screen (Hein Htet Aung), started-11/06/2025 completed-15/06/2025 (week 4)
+* System Architecture draft (Bui Tran Doan), started-11/06/2025 completed 15/06/2025 (week 4)
 
 ### Burn Down for iteration-1 (see chapter 4):
 Update this at least once per week
-* 4 weeks left, xx days of estimated amount of work 
+* 4 weeks left, 9 days of estimated amount of work 
 * 2 weeks left, xx days
 * 1 weeks left, xx days
 * 0 weeks left, xx days
