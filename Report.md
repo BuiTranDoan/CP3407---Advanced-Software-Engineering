@@ -19,8 +19,8 @@
 
 ## 2. Burndown Chart
 
-![Burn Down Chart](<img width="1286" height="740" alt="burndownchart" src="https://github.com/user-attachments/assets/313377d4-7937-4353-bb49-d511ea7546d3" />
-)
+<img width="1286" height="740" alt="burndownchart" src="https://github.com/user-attachments/assets/b079cd9c-6132-4323-b47f-954de7e2c2ab" />
+
 
 _Remaining work at the start of each week (in days of effort):_
 
