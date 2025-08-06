@@ -6,7 +6,8 @@
     <h1>Work Logs</h1>
 </div>
 
-<div class="mt-5">
+<div class="container mt-5">
+    <a href="{% url 'staff_home' %}" class="btn btn-secondary mb-3">Back</a>
     <!-- Shift Filter -->
     <form method="get" >
         <label for="shift">Select Shift:</label>
@@ -21,6 +22,7 @@
         <button type="submit" class="btn btn-primary ml-2">Go</button>
     </form>
 
+    <div class="card-x">
     {% if selected_shift %}
         <h3>Staff in {{ selected_shift.name }}</h3>
         <table class="table table-striped">
@@ -53,5 +55,6 @@
             </tbody>
         </table>
     {% endif %}
+    </div>
 </div>
 {% endblock %}

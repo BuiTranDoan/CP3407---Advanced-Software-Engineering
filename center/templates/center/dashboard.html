@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+
+<div class="container mt-5">
+  <h1 class="mb-4">Restaurant Dashboard</h1>
+
+  <!-- Month Filter -->
+  <form method="get" class="mb-4">
+    <div class="form-group row">
+      <label for="month" class="col-sm-2 col-form-label">Select Month:</label>
+      <div class="col-sm-4">
+        <input type="month" id="month" name="month" class="form-control"
+               value="{{ selected_date|date:'Y-m' }}" onchange="this.form.submit()">
+      </div>
+    </div>
+  </form>
+
+
+ <!-- Monthly Sales Summary Table -->
+<div class="card mb-4">
+  <div class="card-header"><strong>Sales Summary for {{ selected_date|date:"F Y" }}</strong></div>
+  <div class="card-body">
+    <table class="table table-bordered table-sm">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Total Sales</th>
+          <th>Total Orders</th>
+          <th>Avg Order Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for date, data in daily_summary %}
+          <tr>
+            <td>{{ date|date:"Y-m-d" }}</td>
+            <td>${{ data.sales|floatformat:2 }}</td>
+            <td>{{ data.orders }}</td>
+            <td>${{ data.avg_order|floatformat:2 }}</td>
+          </tr>
+        {% empty %}
+          <tr><td colspan="4">No orders found this month.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+  <!-- Top-Selling Items -->
+  <div class="card mb-4">
+    <div class="card-header"><strong>Top Selling Items</strong></div>
+    <div class="card-body">
+      <table class="table table-bordered table-sm">
+        <thead>
+          <tr>
+            <th>Menu Item</th>
+            <th>Quantity Sold</th>
+            <th>Total Revenue</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in top_items %}
+            <tr>
+              <td>{{ item.menu_item__name }}</td>
+              <td>{{ item.quantity_sold }}</td>
+              <td>${{ item.total_revenue|floatformat:2 }}</td>
+            </tr>
+          {% empty %}
+            <tr><td colspan="3">No items sold.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Table Usage -->
+  <div class="card mb-4">
+    <div class="card-header"><strong>Table Usage</strong></div>
+    <div class="card-body">
+      <table class="table table-bordered table-sm">
+        <thead>
+          <tr>
+            <th>Table</th>
+            <th>Status</th>
+            <th>Orders</th>
+            <th>Sales</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for table in table_data %}
+            <tr>
+              <td>{{ table.table_number }}</td>
+              <td>{{ table.status }}</td>
+              <td>{{ table.order_count }}</td>
+              <td>${{ table.total_sales|floatformat:2 }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Low Stock Ingredients -->
+  <div class="card mb-4">
+    <div class="card-header text-danger"><strong>Low Stock Ingredients</strong></div>
+    <div class="card-body">
+      {% if low_stock_ingredients %}
+        <table class="table table-bordered table-sm">
+          <thead>
+            <tr>
+              <th>Ingredient</th>
+              <th>Current Stock</th>
+              <th>Threshold</th>
+              <th>Unit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for ing in low_stock_ingredients %}
+              <tr>
+                <td>{{ ing.name }}</td>
+                <td>{{ ing.stock }}</td>
+                <td>{{ ing.threshold }}</td>
+                <td>{{ ing.unit }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>All ingredients are above threshold.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
