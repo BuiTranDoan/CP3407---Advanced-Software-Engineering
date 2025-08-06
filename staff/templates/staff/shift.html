@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Shift{% endblock title %}
+{% block content %}
+
+<div class="container">
+    <h1>Shift</h1>
+</div>
+
+<div class="container mt-5">
+    <a href="{% url 'staff_home' %}" class="btn btn-secondary mb-3">Back</a>
+    <a href="{% url 'shift_add' %}" class="btn btn-primary mb-3">Add New Shift</a>
+    <div class="card-x">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Shift</th>
+                <th>Start time</th>
+                <th>End time</th>
+                <th>Staff</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for shift in shifts %}
+                <tr>
+                    <td>{{ shift.name }}</td>
+                    <td>{{ shift.start_time }}</td>
+                    <td>{{ shift.end_time }}</td>
+                    <td>
+                        {% for staff in shift.staff_members.all %}
+                        {{ staff.user.get_full_name }}
+                        {% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <a href="{% url 'shift_edit' shift.id %}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{% url 'shift_delete' shift.id %}"
+                           class="btn btn-danger btn-sm"
+                           onclick="return confirm('Are you sure you want to delete {{ shift.full_name }}?');">
+                            Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+
+{% endblock %}

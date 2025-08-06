@@ -32,4 +32,5 @@ urlpatterns = [
     path('inventory/', include('inventory.urls')),
     path('dashboard/', include('center.urls')),
     path('staff/', include('staff.urls')),
+
 ]

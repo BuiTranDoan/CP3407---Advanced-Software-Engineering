@@ -19,7 +19,7 @@ urlpatterns = [
     path('ingredient/edit/<int:ingredient_id>/', ingredient_edit, name='ingredient_edit'),
     path('ingredient/delete/<int:ingredient_id>/', ingredient_delete, name='ingredient_delete'),
 
-    path('ingredienta/<int:ingredient_id>/add_audit/', stock_audit_add, name='stock_audit_add'),
+    path('ingredient/<int:ingredient_id>/add_audit/', stock_audit_add, name='stock_audit_add'),
 
 
 ]

@@ -34,9 +34,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'inventory' %}">Inventory</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'staff_home' %}">Staff</a>
+                        </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <span class="nav-link">{{ user.username }}</span>
+                            <a class="nav-link">{{ user.username }}</a>
                         </li>
                         <li class="nav-item">
                             <form method="post" action="{% url 'logout' %}" style="display:inline;">
