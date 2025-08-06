@@ -28,10 +28,11 @@ User stories or tasks (see chapter 4):
 
 ---
 
-### Burn Down for iteration-2 (see chapter 4)
+### Burn Down for Iteration-2 (see chapter 4)
 _Update this at least once per week_
-- 4 weeks left: 7 days of estimated work  
-- 2 weeks left: 3 days remaining  
-- 1 week left: 1 day remaining  
-- 0 weeks left: 0 days  
-- **Actual Velocity:** 2 days/week 
+- 4 weeks left: 12 days of estimated work
+- 3 weeks left: 9 days remaining
+- 2 weeks left: 5 days remaining
+- 1 week left: 2 days remaining
+- 0 weeks left: 0 days
+- **Actual Velocity:** ~3 days/week
