@@ -90,7 +90,7 @@ _Remaining work at the start of each week (in days of effort):_
 ## 3. Meeting Records
 
 ### 1. Iteration 1 Planning (10 Jun 2025)  
-**Attendees:** Victor (SM), Hein, Bui, Zwe, Banyar  
+**Attendees:** Hein, Bui, Zwe, Banyar  
 - **Discussion:**  
   - Reviewed and prioritized 9 days worth of user stories.  
   - Agreed on Definition of Done, branching strategy, and CI checks.  
@@ -128,7 +128,7 @@ _Remaining work at the start of each week (in days of effort):_
   - Devs to refine estimates (use story points).
 
 ### 5. Iteration 2 Planning (8 Jul 2025)  
-**Attendees:** Victor (SM), Hein, Bui, Zwe, Banyar  
+**Attendees:** Hein, Bui, Zwe, Banyar  
 - **Discussion:** scoped 12 days of new features into four mini-sprints.  
 - **Risks:** potential merge conflicts with iteration-1 branch.  
 - **Action Items:**  
