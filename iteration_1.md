@@ -1,4 +1,4 @@
-# Actual iteration-1 board, 11/06/20025 ~ (end date here...)
+# Actual iteration-1 board, 11/06/2025 ~ 10/08/2025
 
 
 * Assumed Velocity: 3 task per week
@@ -25,10 +25,11 @@ User stories or tasks (see chapter 4):
 
 ---
 
-### Burn Down for iteration-1 (see chapter 4)
-_Update this at least once per week_  
-- 4 weeks left: 9 days of estimated work  
-- 2 weeks left: 4 days remaining  
-- 1 week left: 2 days remaining  
-- 0 weeks left: 0 days  
-- **Actual Velocity:** 2.25 days/week  
+### Burn Down for Iteration-1 (see chapter 4)
+_Update this at least once per week_
+- 4 weeks left: 9 days of estimated work
+- 3 weeks left: 7 days remaining
+- 2 weeks left: 4 days remaining
+- 1 week left: 2 days remaining
+- 0 weeks left: 0 days
+- **Actual Velocity:** ~2.25 days/week
