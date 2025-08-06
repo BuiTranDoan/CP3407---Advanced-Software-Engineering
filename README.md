@@ -8,10 +8,10 @@
 4. Zwe Nanda
 ---
 ## Team Roles
-1. Banyar Saw Thit
-2. Bui Tran Doan
-3. Hein Htet Aung
-4. Zwe Nanda
+1. Banyar Saw Thit (Backend Engineering)
+2. Bui Tran Doan (Product Owner)
+3. Hein Htet Aung (Frontend Engineering)
+4. Zwe Nanda (UI/UX designer)
 ---
 ## Project overview
 
@@ -28,34 +28,39 @@
 
 ---
 
-This project proposes a Scan-to-Order Restaurant Web App allowing customers to browse the menu, place orders, and pay from their phones by scanning a QR code. Before Iteration 1, necessary user stories are developed, with given priorities and projected work in days. QR scanning, category browsing, cart management, order summary, and online payment are among the features. Additional features include kitchen view, admin menu modification, and digital receipts. With an expected total of 15-20 days of work, the team guarantees that there are more user stories than can be finished initially, allowing for appropriate prioritization and sprint planning.
+## Iteration 1 [duration 4 weeks], 10/06/2025 – 07/07/2025
+
+* Goal is to have 2 iterations during a trimester of teaching.  
+* Update the following during each week prac session  
+* During pracs, you may experiment with using other GitHub ways of tracking changes, e.g. via pull requests
+
+1. [Add menu items](./user_stories/user_story_01_add_menu_items.md), priority High, 2 days  
+2. [Store customer orders](./user_stories/user_story_02_store_customer_orders.md), priority High, 3 days  
+3. [Store inventory data](./user_stories/user_story_03_store_inventory_data.md), priority High, 3 days  
+4. [System Architecture & UI Sketching](./user_stories/task_system_architecture_ui.md), priority Medium, 1 day  
+
+**Total:** 9 days
 
 ---
 
-## Iteration 1 [duration 3-4 weeks], add your start and end dates 
+### Iteration 2 [duration 4 weeks], 15/07/2025 – 11/08/2025
 
-* Goal is to have 2 iterations during a trimester of teaching.
-* Update the following during each week prac session
-* During pracs, you may experiment with using other github ways of tracking changes, e.g. via pull requests.
+* Goal is to have 2 iterations during a trimester of teaching.  
 
-1. [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+1. [Manage staff access & info](./user_stories/user_story_04_manage_staff_access.md), priority High, 3 days  
+2. [Store labor/staff data](./user_stories/user_story_05_store_labor_data.md), priority High, 3 days  
+3. [Dashboard overview](./user_stories/user_story_06_dashboard_overview.md), priority High, 1 day  
 
-Total: YY days
+**Total:** 7 days
 
+---
 
-### Iteration 2 [duration 3-4 weeks], add your start and end dates
-Goal is to have 2 iterations during a trimester of teaching.
-1. [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+### Not enough time/developers:
 
-Total: YY days
+1. [CI/CD pipeline setup](./user_stories/task_cicd_pipeline.md), priority Medium, 2 days  
+2. [Write authentication unit tests](./user_stories/task_auth_unit_tests.md), priority Low, 2 days  
 
-### Not enough time/developers: 
-1. [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
-
-Total: YY days
+**Total:** 4 days
 
 # Actual iterations
 1. [Iteration-1](./iteration_1.md)
