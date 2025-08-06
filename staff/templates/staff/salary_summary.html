@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Salary Summary{% endblock title %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Salary Summary - {{ month }}</h2>
+
+    <form method="get" class="mb-3">
+        <label for="month">Select Month: </label>
+        <input type="month" name="month" id="month" value="{{ month }}" class="form-control d-inline w-auto">
+        <button type="submit" class="btn btn-primary ml-2">Filter</button>
+    </form>
+
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Staff Name</th>
+                <th>Hourly Rate ($)</th>
+                <th>Total Hours</th>
+                <th>Overtime Hours</th>
+                <th>Absent Days</th>
+                <th>Total Salary ($)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name, info in summary.items %}
+            <tr>
+                <td>{{ name }}</td>
+                <td>{{ info.hourly_rate }}</td>
+                <td>{{ info.total_hours|floatformat:2 }}</td>
+                <td>{{ info.overtime_hours|floatformat:2 }}</td>
+                <td>{{ info.absent_days }}</td>
+                <td>{{ info.salary }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

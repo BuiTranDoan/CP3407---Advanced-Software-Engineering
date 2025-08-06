@@ -1,21 +1,22 @@
 # Actual iteration-1 board, 11/06/20025 ~ (end date here...)
 
----
+
 * Assumed Velocity: 3 task per week
 * Number of developers: 4
 * Total estimated amount of work ( 4 developer workload) :  9 days
-
+---
 User stories or tasks (see chapter 4):
-1. [Add menu items (user_story 4)](./user_stories/user_story_04_add_menu_items.md), priority High, 2 days  
-2. [Store customer orders (user_story 1)](./user_stories/user_story_01_store_customer_orders.md), priority High, 3 days  
-3. [Store inventory data (user_story 2)](./user_stories/user_story_02_store_inventory_data.md), priority High, 3 days  
+1. [Add menu items (user story 1)](./user_stories/user_story_04_add_menu_items.md), priority High, 2 days  
+2. [Store customer orders (user story 2)](./user_stories/user_story_01_store_customer_orders.md), priority High, 3 days  
+3. [Store inventory data (user story 3)](./user_stories/user_story_02_store_inventory_data.md), priority High, 3 days  
 4. [System Architecture & UI Sketching](./user_stories/task_architecture_prototype_sketch.md), internal task, 1 day
-
+---
 In progress:
-* Store inventory data (ZWE NANDA), started 11/06/2025
+
 * Add menu items (Banyar Saw Thit), started 10/06/2025
-* Store customer orders (Banyar Saw Thit), started 11/06/2025  
-    
+* Store customer orders (Banyar Saw Thit), started 11/06/2025
+* Store inventory data (ZWE NANDA), started 11/06/2025
+
 Completed:
 * UI sketching for Add Menu Items screen (Hein Htet Aung), started-11/06/2025 completed-15/06/2025 (week 4)
 * System Architecture draft (Bui Tran Doan), started-11/06/2025 completed 15/06/2025 (week 4)

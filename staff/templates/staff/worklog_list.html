@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}WorkLog{% endblock title %}
+{% block content %}
+
+<div class="container">
+    <h1>Work Logs</h1>
+</div>
+
+<div class="mt-5">
+    <!-- Shift Filter -->
+    <form method="get" >
+        <label for="shift">Select Shift:</label>
+        <select name="shift" id="shift" class="form-control w-50 d-inline">
+            <option value="">-- Choose a shift --</option>
+            {% for shift in shifts %}
+                <option value="{{ shift.id }}" {% if shift == selected_shift %}selected{% endif %}>
+                    {{ shift.name }} ({{ shift.start_time }} - {{ shift.end_time }})
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-primary ml-2">Go</button>
+    </form>
+
+    {% if selected_shift %}
+        <h3>Staff in {{ selected_shift.name }}</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Staff</th>
+                    <th>Clock In</th>
+                    <th>Clock Out</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for staff in staff_members %}
+                    <tr>
+                        <td>{{ staff.user.get_full_name }}</td>
+                        <td>{{ logs.staff.id.clock_in_time|default:"--" }}</td>
+                        <td>{{ logs.staff.id.clock_out_time|default:"--" }}</td>
+                        <td>
+                            <form method="post" action="{% url 'clock_in' staff.id selected_shift.id %}" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-success btn-sm">Clock In</button>
+                            </form>
+                            <form method="post" action="{% url 'clock_out' staff.id selected_shift.id %}" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm">Clock Out</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+{% endblock %}

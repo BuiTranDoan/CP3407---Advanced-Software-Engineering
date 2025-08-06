@@ -28,7 +28,7 @@
                     <td>{{ ingredient.total_purchase }} {{ ingredient.unit }}</td>
                     <td>{{ ingredient.total_use }} {{ ingredient.unit }}</td>
                     <td>{{ ingredient.stock_level }} {{ ingredient.unit }}</td>
-                    <td>{{ ingredient.last_actual_stock }}</td>
+                    <td>{{ ingredient.last_actual_stock }} {{ ingredient.unit }}</td>
                     <td>
                         <a href="{% url 'ingredient_edit' ingredient.id %}" class="btn btn-warning btn-sm">Edit</a>
                         <a href="{% url 'ingredient_detail' ingredient.id %}" class="btn btn-primary btn-sm">Detail</a>

@@ -4,7 +4,81 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="90ff9b72-7f83-4c62-8441-96c42d4770f8" name="Changes" comment="testing updates" />
+    <list default="true" id="90ff9b72-7f83-4c62-8441-96c42d4770f8" name="Changes" comment="some fix">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25,_9_34 AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25,_9_35 AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25,_9_35 AM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25,_9_44 AM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25,_9_44 AM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25__9_34AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25__9_35AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25__9_35AM__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25__9_44AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25__9_44AM__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/center/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/decorators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0002_staffprofile_phone_number_staffshift.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0003_rename_staffshift_shift.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0004_position_alter_staffprofile_position.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0005_alter_staffprofile_position.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0006_alter_staffprofile_position.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0007_remove_staffprofile_full_name_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0008_worklog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0009_remove_staffprofile_shift.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0010_staffprofile_salary_per_hour_alter_shift_name_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0011_remove_salarylog_absence_log_absencelog_date_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0012_salarylog_created_at.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0013_delete_absencelog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/0014_rename_salary_per_hour_staffprofile_hourly_rate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/templates/staff/salary_summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/templates/staff/shift.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/templates/staff/shift_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/templates/staff/staff_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/templates/staff/staff_home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/templates/staff/staff_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/templates/staff/worklog_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/staff/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/RMS/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RMS/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/RMS/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User_stories.md" beforeDir="false" afterPath="$PROJECT_DIR$/User_stories.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/center/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/center/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/staff/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/staff/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/RMS/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/inventory.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/js/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/menu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/order.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/orders.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/tables.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_purchase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredients.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredients.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iteration_1.md" beforeDir="false" afterPath="$PROJECT_DIR$/iteration_1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iteration_2.md" beforeDir="false" afterPath="$PROJECT_DIR$/iteration_2.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/migrations/0002_alter_customization_price.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu/migrations/0002_alter_customization_price.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/order/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index2.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,25 +112,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/banyarsawthit/SoftwareDevelopment/GitHub/CP3407-ASE/menu/templates/menu&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Merging main",
+    "last_opened_file_path": "/Users/banyarsawthit/SoftwareDevelopment/GitHub/CP3407-ASE/RMS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/menu/templates/menu" />
+      <recent name="$PROJECT_DIR$/RMS" />
       <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/menu/templates/menu" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/center/template/dashboard" />
@@ -317,6 +392,12 @@
       <workItem from="1753758571661" duration="13281000" />
       <workItem from="1753804643150" duration="16231000" />
       <workItem from="1753854230670" duration="6292000" />
+      <workItem from="1753974983854" duration="1483000" />
+      <workItem from="1754116817165" duration="18354000" />
+      <workItem from="1754209944418" duration="1584000" />
+      <workItem from="1754294738880" duration="14626000" />
+      <workItem from="1754361434998" duration="9230000" />
+      <workItem from="1754453046088" duration="9264000" />
     </task>
     <task id="LOCAL-00001" summary="Category pages">
       <option name="closed" value="true" />
@@ -366,15 +447,23 @@
       <option name="project" value="LOCAL" />
       <updated>1753844118266</updated>
     </task>
-    <task id="LOCAL-00007" summary="testing updates">
+    <task id="LOCAL-00007" summary="center folder fix">
       <option name="closed" value="true" />
-      <created>1753869298293</created>
+      <created>1753926440522</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1753869298293</updated>
+      <updated>1753926440522</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="center folder fix">
+      <option name="closed" value="true" />
+      <created>1753928496195</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1753928496195</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,6 +487,8 @@
     <MESSAGE value="Iteration I" />
     <MESSAGE value="inventory_purchase" />
     <MESSAGE value="testing updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing updates" />
+    <MESSAGE value="bug fix" />
+    <MESSAGE value="center folder fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="center folder fix" />
   </component>
 </project>

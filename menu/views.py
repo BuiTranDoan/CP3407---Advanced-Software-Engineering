@@ -4,9 +4,11 @@ from django.shortcuts import render, get_object_or_404, redirect
 from rest_framework import viewsets
 from rest_framework.permissions import IsAdminUser
 
+from decorators import admin_required
 from .models import Category, Customization, MenuItem
 from .serializers import CategorySerializer, CustomizationSerializer, MenuItemSerializer
 from .forms import *
+
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
@@ -28,6 +30,7 @@ def category(request):
     categories = Category.objects.all()
     return render(request, 'menu/category.html', {'categories': categories})
 
+@admin_required
 def category_add(request):
     if request.method == 'POST':
         form = CategoryForm(request.POST)
@@ -38,6 +41,7 @@ def category_add(request):
         form = CategoryForm()
     return render(request, 'menu/category_add_edit.html', {'form': form})
 
+@admin_required
 def category_edit(request, pk):
     category_obj = get_object_or_404(Category, id=pk)
     if request.method == 'POST':
@@ -49,6 +53,7 @@ def category_edit(request, pk):
         form = CategoryForm(instance=category_obj)
     return render(request, 'menu/category_add_edit.html', {'form':form})
 
+@admin_required
 def category_delete(request, pk):
     category_obj = get_object_or_404(Category, id=pk)
     if request.method == 'POST':
@@ -61,6 +66,7 @@ def customization(request):
     customizations = Customization.objects.all()
     return render(request, 'menu/customization.html', {'customizations': customizations})
 
+@admin_required
 def customization_add(request):
     if request.method == 'POST':
         form = CustomizationForm(request.POST)
@@ -71,6 +77,7 @@ def customization_add(request):
         form = CustomizationForm()
     return render(request, 'menu/customization_add_edit.html', {'form': form})
 
+@admin_required
 def customization_edit(request, pk):
     customization_obj = get_object_or_404(Customization, id=pk)
     if request.method == 'POST':
@@ -82,6 +89,7 @@ def customization_edit(request, pk):
         form = CustomizationForm(instance=customization_obj)
     return render(request, 'menu/customization_add_edit.html', {'form':form})
 
+@admin_required
 def customization_delete(request, pk):
     customization_obj = get_object_or_404(Customization, id=pk)
     if request.method == 'POST':
@@ -94,6 +102,7 @@ def menu_list_view(request):
     items = MenuItem.objects.all()
     return render(request, 'menu/menu_list.html', {'items': items})
 
+@admin_required
 def menu_add(request):
     if request.method == 'POST':
         form = MenuItemForm(request.POST)
@@ -104,6 +113,7 @@ def menu_add(request):
         form = MenuItemForm()
         return render(request, 'menu/menu_add_edit.html', {'form': form})
 
+@admin_required
 def menu_edit(request, pk):
     item = get_object_or_404(MenuItem, id=pk)
     if request.method == 'POST':
@@ -115,6 +125,7 @@ def menu_edit(request, pk):
         form = MenuItemForm(instance=item)
     return render(request, 'menu/menu_edit.html', {'form': form, 'item': item})
 
+@admin_required
 def menu_delete(request, pk):
     item = get_object_or_404(MenuItem, id=pk)
     if request.method == 'POST':

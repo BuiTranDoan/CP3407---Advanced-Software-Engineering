@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Assign staff & shift{% endblock title %}
+{% block content %}
+
+<div class="container">
+    <h1>Assign staff & shift</h1>
+</div>
+
+<div class="container mt-5">
+    <a href="{% url 'home' %}" class="btn btn-secondary mb-3">Home</a>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <div class="card-x">
+            <a href="{% url 'staff' %}">
+                <h2>Staff</h2>
+                <i class="fas fa-user fa-3x mb-3"></i>
+                <p>Manage staff here.</p>
+            </a>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="card-x">
+            <a href="{% url 'shift' %}">
+                <h2>Shift</h2>
+                <i class="fas fa-clock fa-3x mb-3"></i>
+                <p>Manage shift here.</p>
+            </a>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="card-x">
+            <a href="{% url 'worklog_list'  %}">
+                <h2>Worklog</h2>
+                <i class="fas fa-clipboard-list fa-3x mb-3"></i>
+                <p>Record worklog here.</p>
+            </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

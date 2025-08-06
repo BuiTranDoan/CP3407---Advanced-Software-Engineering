@@ -1,9 +1,12 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.db.models import Sum, Count, F
 from datetime import datetime
 from order.models import Order, OrderItem, Table
 from inventory.models import Ingredient
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def dashboard(request):
     # Get date from GET parameter or default to today
     date_str = request.GET.get('date')

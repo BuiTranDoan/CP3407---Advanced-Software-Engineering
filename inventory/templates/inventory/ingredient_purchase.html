@@ -8,7 +8,9 @@
 
 <div class="container mt-5">
     <a href="{% url 'inventory' %}" class="btn btn-secondary mb-3">Go Back</a>
+    {% if user.is_super %}
     <a href="{% url 'ingredient_purchase_add' %}" class="btn btn-primary mb-3">Add Purchases</a>
+     {% endif %}
     <div class="card-x">
     <table class="table table-striped">
         <thead>
