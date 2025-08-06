@@ -19,7 +19,8 @@
 
 ## 2. Burndown Chart
 
-![Burn Down Chart](burndown_chart.png)
+![Burn Down Chart](<img width="1286" height="740" alt="burndownchart" src="https://github.com/user-attachments/assets/313377d4-7937-4353-bb49-d511ea7546d3" />
+)
 
 _Remaining work at the start of each week (in days of effort):_
 
@@ -40,14 +41,14 @@ _Remaining work at the start of each week (in days of effort):_
 - Assigned tasks according to the board; agreed on Definition of Done and tool setup.  
 - **Action Items:**  
   - Devs to update GitHub timestamps by 12 Jun.  
-  - SM to publish iteration-1 burndown template.
+  - Team to publish iteration-1 burndown template.
 
 ### Week 1 Stand-up (17 Jun 2025)
 - **Blocker:** inventory-store task awaiting DB schema confirmation.  
 - **Progress:** UI sketching completed.  
 - **Action Items:**  
-  - Zwe to finalize schema by end of day.  
-  - Banyar to begin menu-item integration.
+  - Zwe Nandar to finalize schema by end of day.  
+  - Banyar Saw Thit to begin menu-item integration.
 
 ### Week 2 Stand-up (24 Jun 2025)
 - Inventory-store and customer-orders in progress; no major impediments.  
@@ -59,7 +60,7 @@ _Remaining work at the start of each week (in days of effort):_
 - **What went well:** clear task breakdown.  
 - **Improvements:** tighter daily check-ins.  
 - **Action Items:**  
-  - SM to adjust stand-up cadence.  
+  - Zwe Nandar Nanda to adjust stand-up cadence.  
   - Devs to estimate tasks more granularly.
 
 ### Iteration 2 Planning (8 Jul 2025)
@@ -72,39 +73,39 @@ _Remaining work at the start of each week (in days of effort):_
 - Achieved 3 days of work in the first week (velocity spike).  
 - Minor merge conflict resolved.  
 - **Action Items:**  
-  - Bui to document merge process in the repo Wiki.
+  - BuiTranDoan to document merge process in the repo Wiki.
 
 ### Week 2 of Iteration 2 Stand-up (22 Jul 2025)
 - Completed 4 days of work.  
 - UI review scheduled for 24 Jul.  
 - **Action Items:**  
-  - Hein to lead the mid-week UI review session.
+  - Hein Htet Aung to lead the mid-week UI review session.
 
 ### Iteration 2 Review & Retrospective (29 Jul 2025)
 - Delivered 12 days of work in 4 weeks; velocity improved to 3 days/week.  
 - **Kudos:** improved estimation accuracy.  
 - **Retro item:** refine acceptance criteria for stories.  
 - **Action Items:**  
-  - SM to draft updated Definition of Ready/Done.  
+  - Team to draft updated Definition of Ready/Done.  
   - Plan next iteration’s capacity check.
 ## 3. Meeting Records
 
 ### 1. Iteration 1 Planning (10 Jun 2025)  
-**Attendees:** Hein, Bui, Zwe, Banyar  
+**Attendees:** Hein Htet Aung, BuiTranDoan, Zwe Nandar, Banyar Saw Thit  
 - **Discussion:**  
   - Reviewed and prioritized 9 days worth of user stories.  
   - Agreed on Definition of Done, branching strategy, and CI checks.  
 - **Action Items:**  
   - Devs to clone fresh repo and set up local environments by 12 Jun.  
-  - SM to publish iteration-1 burndown template in Confluence.
+  - Team to publish iteration-1 burndown template in Confluence.
 
 ### 2. Iteration 1 Stand-up (Week 1: 17 Jun 2025)  
 **Attendees:** All devs  
 - **Blockers:** inventory-store task awaiting DB schema sign-off.  
 - **Progress:** UI wireframes completed; API stubs in place.  
 - **Action Items:**  
-  - Zwe to finalize and commit schema by end of day.  
-  - Banyar to integrate menu-item endpoints.
+  - Zwe Nandar to finalize and commit schema by end of day.  
+  - Banyar Saw Thit to integrate menu-item endpoints.
 
 ### 3. Iteration 1 Stand-up (Week 2: 24 Jun 2025)  
 **Attendees:** All devs  
@@ -113,8 +114,8 @@ _Remaining work at the start of each week (in days of effort):_
   - Customer-orders feature 50% done.  
   - Authentication flow tested locally.  
 - **Action Items:**  
-  - Hein to write unit tests for auth by 26 Jun.  
-  - Bui to document API usage in README.
+  - Banyar Saw Thit to write unit tests for auth by 26 Jun.  
+  - BuiTranDoan to document API usage in README.
 
 ### 4. Iteration 1 Review & Retro (1 Jul 2025)  
 **Attendees:** All devs + Product Owner  
@@ -124,11 +125,11 @@ _Remaining work at the start of each week (in days of effort):_
 - **What Went Well:** clear task breakdown; smooth CI runs.  
 - **Improvements:** need more frequent pair programming.  
 - **Action Items:**  
-  - SM to schedule bi-daily code reviews.  
+  - Zwe Nandar to schedule bi-daily code reviews.  
   - Devs to refine estimates (use story points).
 
 ### 5. Iteration 2 Planning (8 Jul 2025)  
-**Attendees:** Hein, Bui, Zwe, Banyar  
+**Attendees:** Hein Htet Aung, BuiTranDoan, Zwe Nandar, Banyar Saw Thit  
 - **Discussion:** scoped 12 days of new features into four mini-sprints.  
 - **Risks:** potential merge conflicts with iteration-1 branch.  
 - **Action Items:**  
@@ -140,16 +141,16 @@ _Remaining work at the start of each week (in days of effort):_
 - **Blockers:** merge conflict in payment module.  
 - **Progress:** delivered 3 days of work; created payment stub.  
 - **Action Items:**  
-  - Bui to write conflict resolution guide.  
-  - Zwe to demo payment flow in next stand-up.
+  - BuiTranDoan to write conflict resolution guide.  
+  - Zwe Nandar to demo payment flow in next stand-up.
 
 ### 7. Iteration 2 Stand-up (Week 2: 22 Jul 2025)  
 **Attendees:** All devs  
 - **Blockers:** UI assets pending from design team.  
 - **Progress:** 4 days of work completed; cart functionality live.  
 - **Action Items:**  
-  - Hein to schedule design hand-off on 24 Jul.  
-  - Banyar to integrate cart into order flow.
+  - Hein Htet Aung to schedule design hand-off on 24 Jul.  
+  - Banyar Saw Thit to integrate cart into order flow.
 
 ### 8. Iteration 2 Review & Retro (29 Jul 2025)  
 **Attendees:** All devs + Product Owner  
@@ -158,5 +159,5 @@ _Remaining work at the start of each week (in days of effort):_
 - **What Went Well:** better estimation accuracy; conflict guide helpful.  
 - **Improvements:** strengthen backlog grooming.  
 - **Action Items:**  
-  - SM to add backlog-grooming session in next sprint.  
+  - Zwe Nanda to add backlog-grooming session in next sprint.  
   - Devs to update DoR with clearer acceptance criteria.
