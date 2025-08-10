@@ -14,10 +14,11 @@
 4. Zwe Nanda (UI/UX designer)
 ---
 ## Project overview
-
+This project is a Django-based Restaurant Management System designed to help restaurants streamline their daily operations. It includes features for managing menus, orders, inventory, staff, and sales reporting. By providing an integrated dashboard and role-based access, the system improves efficiency, reduces manual errors, and enhances decision-making for managers and staff. The solution is tailored for small to medium-sized restaurants aiming for an all-in-one management tool.
 
 ---
 ## Project goals
+The main goal of this project is to develop a user-friendly and efficient platform for managing restaurant operations. We aim to provide managers with tools for real-time monitoring of sales, inventory, and staff performance while giving staff an easy way to manage orders and menu updates. The system should be secure, scalable, and adaptable to different restaurant workflows. Ultimately, it should save time, improve accuracy, and support better customer service.
 
 ---
 ## Checklist / TODOs:
@@ -66,4 +67,43 @@
 1. [Iteration-1](./iteration_1.md)
 2. [Iteration-2](./iteration_2.md)
 
+Installation Instructions
+
+Follow the steps below to set up the project locally:
+1. Clone the Repository
+ <pre>
+git clone https://github.com/your-repo-name.git
+cd your-repo-name
+ </pre>
+2. Create and Activate a Virtual Environment
+
+On Windows:
+
+ <pre> bash python -m venv venv  </pre> 
+
+On macOS/Linux:
+
+<pre>source venv/bin/activate</pre>
+
+3. Install Required Dependencies
+
+<pre>pip install -r requirements.txt</pre>
+
+
+4. Set Up the Database
+
+Run migrations to create database tables:
+<pre>python manage.py migrate</pre>
+
+
+5. Create a Superuser (Admin)
+<pre>python manage.py createsuperuser</pre>
+
+
+Follow the prompts to set username, email, and password.
+6. Run the Development Server
+<pre>python manage.py runserver</pre>
+
+
+Access the app at http://127.0.0.1:8000/
 
