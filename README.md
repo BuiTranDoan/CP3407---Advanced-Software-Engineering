@@ -67,7 +67,9 @@ The main goal of this project is to develop a user-friendly and efficient platfo
 1. [Iteration-1](./iteration_1.md)
 2. [Iteration-2](./iteration_2.md)
 
-Installation Instructions
+---
+
+## Installation Instructions
 
 Follow the steps below to set up the project locally:
 1. Clone the Repository
