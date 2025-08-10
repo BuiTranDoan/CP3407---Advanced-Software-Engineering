@@ -81,7 +81,7 @@ cd your-repo-name
 
 On Windows:
 
- <pre> bash python -m venv venv  </pre> 
+ <pre> python -m venv venv  </pre> 
 
 On macOS/Linux:
 
