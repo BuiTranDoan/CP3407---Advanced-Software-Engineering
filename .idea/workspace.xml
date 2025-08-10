@@ -9,23 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90ff9b72-7f83-4c62-8441-96c42d4770f8" name="Changes" comment="testingPage">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25,_9_34 AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25,_9_35 AM_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25,_9_44 AM_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25__9_34AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25__9_35AM__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_31_7_25__9_44AM__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/center/templates/center/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/center/templates/center/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/center/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/center/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/templates/inventory/ingredient_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/inventory/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/templates/menu/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/templates/menu/category_add_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/category_add_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/templates/menu/customization_add_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/customization_add_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/templates/menu/menu_add_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/menu/templates/menu/menu_add_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/templates/menu/menu_edit.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,7 +331,7 @@
       <workItem from="1754294738880" duration="14626000" />
       <workItem from="1754361434998" duration="9230000" />
       <workItem from="1754453046088" duration="9264000" />
-      <workItem from="1754828881718" duration="1327000" />
+      <workItem from="1754828881718" duration="2413000" />
     </task>
     <task id="LOCAL-00001" summary="Category pages">
       <option name="closed" value="true" />
