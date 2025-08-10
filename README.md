@@ -73,10 +73,8 @@ The main goal of this project is to develop a user-friendly and efficient platfo
 
 Follow the steps below to set up the project locally:
 1. Clone the Repository
- <pre>
-git clone https://github.com/your-repo-name.git
-cd your-repo-name
- </pre>
+<pre>git clone https://github.com/your-repo-name.git
+cd your-repo-name</pre>
 2. Create and Activate a Virtual Environment
 
 On Windows:
@@ -95,8 +93,8 @@ On macOS/Linux:
 4. Set Up the Database
 
 Run migrations to create database tables:
+<pre>python manage.py makemigrations</pre>
 <pre>python manage.py migrate</pre>
-
 
 5. Create a Superuser (Admin)
 <pre>python manage.py createsuperuser</pre>
