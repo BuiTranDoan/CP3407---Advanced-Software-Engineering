@@ -39,7 +39,7 @@ def category_add(request):
             return redirect('category')
     else:
         form = CategoryForm()
-    return render(request, 'menu/category_add_edit.html', {'form': form})
+    return render(request, 'menu/category_add_edit.html', {'form': form, 'title': 'Add Category'})
 
 @admin_required
 def category_edit(request, pk):
@@ -51,7 +51,7 @@ def category_edit(request, pk):
             return redirect('category')
     else:
         form = CategoryForm(instance=category_obj)
-    return render(request, 'menu/category_add_edit.html', {'form':form})
+    return render(request, 'menu/category_add_edit.html', {'form':form, 'title': 'Edit Category'})
 
 @admin_required
 def category_delete(request, pk):
@@ -75,7 +75,7 @@ def customization_add(request):
             return redirect('customization')
     else:
         form = CustomizationForm()
-    return render(request, 'menu/customization_add_edit.html', {'form': form})
+    return render(request, 'menu/customization_add_edit.html', {'form': form, 'title': 'Add Customization'})
 
 @admin_required
 def customization_edit(request, pk):
@@ -87,7 +87,7 @@ def customization_edit(request, pk):
             return redirect('customization')
     else:
         form = CustomizationForm(instance=customization_obj)
-    return render(request, 'menu/customization_add_edit.html', {'form':form})
+    return render(request, 'menu/customization_add_edit.html', {'form':form, 'title': 'Edit Customization'})
 
 @admin_required
 def customization_delete(request, pk):
@@ -111,7 +111,7 @@ def menu_add(request):
             return redirect('menu_list')
     else:
         form = MenuItemForm()
-        return render(request, 'menu/menu_add_edit.html', {'form': form})
+        return render(request, 'menu/menu_add_edit.html', {'form': form, 'title': 'Add Menu Item'})
 
 @admin_required
 def menu_edit(request, pk):
@@ -123,7 +123,7 @@ def menu_edit(request, pk):
             return redirect('menu_list')
     else:
         form = MenuItemForm(instance=item)
-    return render(request, 'menu/menu_edit.html', {'form': form, 'item': item})
+    return render(request, 'menu/menu_add_edit.html', {'form': form, 'item': item, 'title': 'Edit Menu Item'})
 
 @admin_required
 def menu_delete(request, pk):

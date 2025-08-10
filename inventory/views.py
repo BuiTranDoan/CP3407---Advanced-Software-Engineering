@@ -35,7 +35,7 @@ def ingredient_purchase_add(request):
             return redirect('ingredient_purchase')
     else:
         form = IngredientPurchaseForm()
-    return render(request, 'inventory/ingredient_purchase_form.html', {'form': form})
+    return render(request, 'inventory/ingredient_purchase_form.html', {'form': form, 'title': 'Add Ingredient Purchase'})
 
 @admin_required
 def ingredient_purchase_edit(request, purchase_id):
@@ -121,7 +121,7 @@ def ingredient_add(request):
             return redirect('ingredients')
     else:
         form = IngredientForm()
-    return render(request, 'inventory/ingredient_add.html', {'form': form})
+    return render(request, 'inventory/ingredient_add.html', {'form': form, 'title': 'Add Ingredient'})
 
 @admin_required
 def ingredient_edit(request, ingredient_id):
@@ -133,7 +133,7 @@ def ingredient_edit(request, ingredient_id):
             return redirect('ingredients')
     else:
         form = IngredientForm(instance=ingredient)
-    return render(request, 'inventory/ingredient_edit.html', {'form': form, 'ingredient': ingredient})
+    return render(request, 'inventory/ingredient_edit.html', {'form': form, 'ingredient': ingredient, 'title': 'Edit Ingredient'})
 
 
 def ingredient_detail(request, ingredient_id):

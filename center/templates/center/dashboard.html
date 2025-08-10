@@ -100,37 +100,6 @@
       </table>
     </div>
   </div>
-
-  <!-- Low Stock Ingredients -->
-  <div class="card mb-4">
-    <div class="card-header text-danger"><strong>Low Stock Ingredients</strong></div>
-    <div class="card-body">
-      {% if low_stock_ingredients %}
-        <table class="table table-bordered table-sm">
-          <thead>
-            <tr>
-              <th>Ingredient</th>
-              <th>Current Stock</th>
-              <th>Threshold</th>
-              <th>Unit</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for ing in low_stock_ingredients %}
-              <tr>
-                <td>{{ ing.name }}</td>
-                <td>{{ ing.stock }}</td>
-                <td>{{ ing.threshold }}</td>
-                <td>{{ ing.unit }}</td>
-              </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      {% else %}
-        <p>All ingredients are above threshold.</p>
-      {% endif %}
-    </div>
-  </div>
 </div>
 
 {% endblock %}

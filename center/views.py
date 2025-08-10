@@ -57,24 +57,11 @@ def dashboard(request):
             'total_sales': sum(order.get_total_price() for order in table_orders),
         })
 
-    # --- Low Stock Ingredients ---
-    low_stock_ingredients = []
-    for ingredient in Ingredient.objects.all():
-        threshold = ingredient.last_actual_stock()
-        if threshold is not None and ingredient.stock_level() < threshold:
-            low_stock_ingredients.append({
-                'name': ingredient.name,
-                'stock': ingredient.stock_level(),
-                'unit': ingredient.unit,
-                'threshold': threshold
-            })
-
     context = {
         'selected_date': selected_date,
         'daily_summary': sorted(daily_summary.items()),  # list of tuples: (date, data)
         'top_items': top_items,
         'table_data': table_data,
-        'low_stock_ingredients': low_stock_ingredients,
     }
 
     return render(request, 'center/dashboard.html', context)
