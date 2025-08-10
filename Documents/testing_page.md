@@ -14,3 +14,10 @@
 
 ## Staff
 <img width="1130" height="477" alt="Screenshot 2025-08-10 at 9 00 30 PM" src="https://github.com/user-attachments/assets/01c9197d-d798-423e-b007-3795cc072be8" />
+
+## User Authentication
+### Admin
+<img width="1130" height="477" alt="Screenshot 2025-08-10 at 9 13 29 PM" src="https://github.com/user-attachments/assets/c58b0399-cad6-4ac1-9758-fd79184d01da" />
+
+### Waiter
+<img width="1130" height="477" alt="Screenshot 2025-08-10 at 9 12 50 PM" src="https://github.com/user-attachments/assets/3b0f88b9-27b8-49cb-a458-ce56647b6b0d" />
